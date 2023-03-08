@@ -81,6 +81,201 @@ hello
 
 ## 7. Backend
 
+### What is backend, why is it required?
+
+The term backend typically refers to the part of an application that handles the logic and data processing behind the scenes. This includes things like database management, server-side scripting etc.
+A backend is required in many applications because it handles the logic and processing that is necessary to provide a complete and functional user experience. Here are a few examples of why a backend is needed in different types of applications:
+
+1. E-commerce website: An e-commerce website requires a backend to handle the processing of orders, inventory management, and payment processing. When a user places an order on the website, the backend must manage the inventory to ensure that the product is available, process the payment securely, and generate an order confirmation for the user.
+
+2. Social media platform: A social media platform requires a backend to manage user profiles, posts, and interactions. When a user creates a post, the backend must store the content and metadata associated with the post, and make it available to other users who have permission to view it.
+
+3. Mobile app: A mobile app requires a backend to handle data synchronization, user authentication, and storage of user preferences. When a user uses a mobile app, the backend must ensure that the user's data is synchronized across devices, verify the user's identity, and store user preferences so they are available the next time the user uses the app.
+
+### Let us understand how it works and how frontend interacts with backend
+
+Before we do we need to see what HTTP methods are:
+HTTP methods are a way for clients (such as web browsers) and servers to communicate with each other over the internet. HTTP stands for Hypertext Transfer Protocol, which is the protocol used for transmitting data over the web.
+
+There are several HTTP methods, also known as HTTP verbs, that are used for different types of requests:
+
+1. GET: Used to retrieve information from a server. When a user visits a website, their web browser sends a GET request to the server to retrieve the webpage.
+
+2. POST: Used to submit information to a server, such as when filling out a form. When a user submits a form on a website, their web browser sends a POST request to the server with the form data.
+
+3. PUT: Used to update or replace existing information on a server. For example, a PUT request could be used to update a user's profile information.
+
+4. DELETE: Used to delete information from a server. For example, a DELETE request could be used to delete a user's account.
+
+5. PATCH: Used to make a partial update to existing information on a server. For example, a PATCH request could be used to update only a specific field in a user's profile.
+
+6. HEAD: Similar to a GET request, but only retrieves the headers of the response, not the body.
+
+A sample http request will look like this
+
+``` http
+GET /example.html HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+```
+
+Here first line is the method and url, the url is relative.
+
+Next few values such as Host, User-Agent etc are the headers, headers are used to pass additional information and configuration data.
+
+### Let’s see how a backend looks like in terms of a program
+
+Without going to a specific language here is a pseudocode for a simple backend. It represenents the common structure of popular backend technology.
+
+```bash
+server = CreateServer()
+
+server.handle(“/”, handleindex)
+
+function handleindex(request, response){
+ response.send(“index.html”)
+} 
+
+Server.listen()
+```
+
+Every server starts with initialization, in the above example `createServer` is the function that creates the server object
+
+`Server.handle` is the function that binds the path "/" of the URL to the given function, here it is the `handleindex` function
+
+Whenever someone will visit the path "/" the server will run the `handleindex` function.
+
+This function receives two parameters
+`request` and `response`
+
+`request` is the request object which will contain information such as body, method, headers etc
+
+This is where data sent from a frontend is found
+
+`response` is the response object that function will send. We can put data and other fields in response and send it back to the frontend that calls the request.
+
+Here we are sending index.html file to the frontend through response.
+
+You may have guessed by now that this request is called by user webpage through browser hence, we send/render the html file.
+
+GET method is usually used to request data from the server, GET is not very secure since the values passed through GET are visible in URL, example:
+<http://example.com/search?q=hello>
+
+Here q is passed to the server with value hello this is visible in URL, GET should never be used to send sensitive data.
+
+It is used to request for data and information passed through GET should only be related to the data that is being retrieved.
+
+POST,PUT and DELETE are typically used to send data to the server, neither of these methods show data in the URL but that does not make them secure automatically, one can still see the request body and find sensitive information.
+
+You should always use HTTPS when sending sensitive information like passwords, keys etc.
+
+APIs:
+APIs stand for application programming interface. In simple terms it means that an API is a function or in case of web a URL that is used to communicate with applications.
+
+A simple example of API in case of web is as follows:
+
+<https://www.example.com/users>
+
+This URL is an API. Which means that if we send a GET request then the server handling the URL will send back data to us.
+
+Similarly if we send a POST request to that URL it will do some different action.
+
+### RESTful APIs
+
+REST stands for REpresentational State Transfer
+
+REST is a design principle which states that a server should make use of 4 http methods for 4 purposes as follows:
+
+1. GET: For retrieval of data
+2. POST: To create new object or to add new data to the server
+3. PUT/PATCH: To update data on the server
+4. DELETE: To remove data from the server
+
+REST is not just these 4 methods there are other principles that come within REST design.\
+(see <https://restfulapi.net/>).
+
+REST APIs are widely used for building web and mobile applications, as well as integrating different software systems.\
+They provide a flexible and scalable way to transfer data between applications, making it easier to build complex systems and enable new types of interactions between different parts of an application or between different applications.
+
+### What are some of the most popular backend languages?
+
+There are many but lets take a brief look at a few:
+
+1. Nodejs:
+NodeJs is a backend programming language that is based on JavaScript. It's used for creating web applications and server-side code. NodeJs is known for its fast performance, scalability, and non-blocking I/O operations. It's commonly used for creating real-time applications, such as chat applications, gaming platforms, and social media platforms.
+
+2. Python:\
+Python is a versatile programming language that is used for web development, scientific computing, data analysis, and machine learning. Python has a simple syntax and a large standard library, making it easy to learn and use. It's commonly used for backend web development, data processing, and automation tasks. Python is also popular in the machine learning and data science fields.
+
+3. JAVA:\
+Java is a popular programming language that is used for developing enterprise-level applications, including web applications and mobile applications. Java is known for its portability, security, and scalability. It's commonly used for backend web development, financial applications, and large-scale enterprise applications. Java is also popular in the Android mobile app development field.
+
+4. PHP:\
+PHP is a scripting language that is used for creating dynamic web pages and server-side code. It's commonly used for backend web development, content management systems, and e-commerce platforms. PHP has a large community and many frameworks and libraries, making it easy to learn and use. However, PHP has been criticized for its security issues and inconsistencies in its syntax.
+
+Here is a tabular comparison of the above languages
+
+<table>
+  <thead>
+    <tr>
+      <th>Factor</th>
+      <th>Python</th>
+      <th>Node.js</th>
+      <th>Java</th>
+      <th>PHP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Performance</td>
+      <td>Generally slower than Java, but fast enough for most use cases. Good for data science, machine learning, and scientific computing.</td>
+      <td>Very fast due to its event-driven, non-blocking I/O model. Good for real-time applications, IoT, and microservices.</td>
+      <td>Fast and efficient due to the JVM (Java Virtual Machine). Excellent for high-performance, large-scale applications.</td>
+      <td>Generally slower than Java, but fast enough for most use cases. Good for web applications and content management systems.</td>
+    </tr>
+    <tr>
+      <td>Scalability</td>
+      <td>Good scalability, particularly with async/await and parallel processing.</td>
+      <td>Good scalability due to non-blocking I/O and event-driven model.</td>
+      <td>Excellent scalability due to the JVM and support for multi-threading.</td>
+      <td>Average scalability due to lack of support for multi-threading.</td>
+    </tr>
+    <tr>
+      <td>Language Features</td>
+      <td>Supports multiple programming paradigms including procedural, object-oriented, and functional programming. Good for data manipulation, scientific computing, and web development.</td>
+      <td>Supports asynchronous programming, event-driven model, and functional programming. Good for real-time applications, microservices, and IoT.</td>
+      <td>Supports object-oriented programming, multi-threading, and strong typing. Good for large-scale applications and enterprise development.</td>
+      <td>Supports procedural, object-oriented, and functional programming. Good for web development and content management systems.</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>Good security features, but vulnerable to injection attacks, cross-site scripting, and code injection.</td>
+      <td>Good security features, but vulnerable to injection attacks, cross-site scripting, and code injection.</td>
+      <td>Excellent security features, with strong encryption and built-in security libraries.</td>
+      <td>Good security features, but vulnerable to injection attacks, cross-site scripting, and code injection.</td>
+    </tr>
+    <tr>
+      <td>Community Support</td>
+      <td>Large and active community with many libraries, frameworks, and resources available. Good for web development, scientific computing, and machine learning.</td>
+      <td>Large and active community with many libraries, frameworks, and resources available. Good for real-time applications, microservices, and IoT.</td>
+      <td>Large and active community with many libraries, frameworks, and resources available. Good for enterprise development and large-scale applications.</td>
+      <td>Large and active community with many libraries, frameworks, and resources available. Good for web development and content management systems.</td>
+    </tr>
+  </tbody>
+</table>
+
+There are many other factors that involve when you choose a backend technology like :- requirements, experience of developers, cost and time, maintenance etc.
+
+Resources:
+
+1. <https://restfulapi.net/>
+2. <https://developer.mozilla.org/en-US/docs/Web/HTTP>
+3. <https://wiki.python.org/moin/WebFrameworks>
+4. <https://www.oracle.com/technical-resources/articles/javase/webapps-1.html>
+5. <https://www.php.net/>
+6. <https://nodejs.org/en/docs/guides/getting-started-guide/>
+
 ## 8. Database
 
 ## 9. Authentication and Authorization
@@ -100,7 +295,7 @@ You don't necessarily need to merge that copy, you can keep it entirely separate
 
 You are not limited to using Git just for source code files - you can also use it to keep track of text files or even images. This means that Git is not just for developers - anyone can find it helpful.
 
-_Wow that sounds cool, how can I actually do it?_
+*Wow that sounds cool, how can I actually do it?*
 
 Well to get started initialize your project, simply run
 
@@ -112,7 +307,7 @@ This will tell Git to get ready to start watching your files for every change th
 
 ![initialize](init.png)
 
-_Ah okay so my files are tracked now? All good, right?_
+*Ah okay so my files are tracked now? All good, right?*
 
 Not really,
 
@@ -153,7 +348,7 @@ It will tell you status of your files
 
 This will put your files from __untracked__ to __staged__ state. '.' (dot) is short form for current directory.
 
-_Oh no I accidentally added a file that I didn't mean to, what do I do?_
+*Oh no I accidentally added a file that I didn't mean to, what do I do?*
 git on the rescue, just tell git to reset
 
 ```bash
@@ -192,7 +387,7 @@ git checkout -b <branch name>
 This will create a new branch, a complete copy of your code.
 It will also replace your current folder to show you contents of this branch.
 
-_Okay, but what happened to my original copy? Is it gone?_
+*Okay, but what happened to my original copy? Is it gone?*
 
 Nope, your original copy is under the branch name master, when you initialize git repository it creates a master branch and uses it as default
 
@@ -204,7 +399,7 @@ git checkout master
 
 Notice it's the same command that we used to create a new branch, the only difference is that we are not giving it -b. As you guessed correctly, the -b is used to tell git to create a new branch  
 
-_I made a cool change in the test branch, tested a few things and I have decided to have those changes into the master branch._
+*I made a cool change in the test branch, tested a few things and I have decided to have those changes into the master branch.*
 
 Simply checkout master branch and tell git to merge:
 
