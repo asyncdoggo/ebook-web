@@ -1,5 +1,6 @@
 {
-  "dependencies": {
-    "marked": "^4.2.12"
-  }
+    "dependencies": {
+        "highlight.js": "^11.7",
+        "showdown": "^1.9.0"
+    }
 }

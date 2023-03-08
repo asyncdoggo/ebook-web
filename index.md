@@ -268,26 +268,26 @@ REST is a design principle which states that a server should make use of 4 http 
 3. PUT/PATCH: To update data on the server
 4. DELETE: To remove data from the server
 
-REST is not just these 4 methods there are other principles that come within REST design.\
+REST is not just these 4 methods there are other principles that come within REST design.
 (see <https://restfulapi.net/>).
 
-REST APIs are widely used for building web and mobile applications, as well as integrating different software systems.\
+REST APIs are widely used for building web and mobile applications, as well as integrating different software systems.
 They provide a flexible and scalable way to transfer data between applications, making it easier to build complex systems and enable new types of interactions between different parts of an application or between different applications.
 
 ### What are some of the most popular backend languages?
 
 There are many but lets take a brief look at a few:
 
-1. __Nodejs__:\
+1. __Nodejs__:
 NodeJs is a backend programming language that is based on JavaScript. It's used for creating web applications and server-side code. NodeJs is known for its fast performance, scalability, and non-blocking I/O operations. It's commonly used for creating real-time applications, such as chat applications, gaming platforms, and social media platforms.
 
-2. __Python__:\
+2. __Python__:
 Python is a versatile programming language that is used for web development, scientific computing, data analysis, and machine learning. Python has a simple syntax and a large standard library, making it easy to learn and use. It's commonly used for backend web development, data processing, and automation tasks. Python is also popular in the machine learning and data science fields.
 
-3. __Java__:\
+3. __Java__:
 Java is a popular programming language that is used for developing enterprise-level applications, including web applications and mobile applications. Java is known for its portability, security, and scalability. It's commonly used for backend web development, financial applications, and large-scale enterprise applications. Java is also popular in the Android mobile app development field.
 
-4. __PHP__:\
+4. __PHP__:
 PHP is a scripting language that is used for creating dynamic web pages and server-side code. It's commonly used for backend web development, content management systems, and e-commerce platforms. PHP has a large community and many frameworks and libraries, making it easy to learn and use. However, PHP has been criticized for its security issues and inconsistencies in its syntax.
 
 Here is a tabular comparison of the above languages
@@ -478,17 +478,11 @@ It will merge those changes into the master branch
 
 ![commit](merge.png)
 
-<br>
-<br>
-<br>
-
 ### What is Github
 
 GitHub is an online hosting service for Git repositories. Imagine working on a project at home and while you are away, maybe at a friend's place, you suddenly remember the solution to a code error that has kept you restless for days.
 
 You cannot make these changes because your PC is not with you. But if you have your project hosted on GitHub, you can access and download that project with a command on whatever computer you have access to. Then you can make your changes and push the latest version back to GitHub.In summary, GitHub lets you store your repo on their platform. Another awesome feature that comes with GitHub is the ability to collaborate with other developers from any location.Now that we have created and initialized our project locally, let's push it to GitHub.If you are a beginner, you will come across some new terms like push, commit, add, and so on - but do not be overwhelmed by them. With some practice you will be able to remember these terms and what they do.
-<br>
-<br>
 
 ### How to push a repository to GitHub
 
@@ -515,7 +509,7 @@ Once you are done use the command:
 git push origin <branch-name>
 ```
 
-Here you tell git that you want to push these changes to your remote that you named as origin in the previous steps and you tell git that you would like to push the given branch \<branch-name\>
+Here you tell git that you want to push these changes to your remote that you named as origin in the previous steps and you tell git that you would like to push the given branch <branch-name\>
 
 You can check your github repository and you will see your files there.
 
@@ -531,7 +525,7 @@ To update the changes you can use:
 git pull origin <branch-name>
 ```
 
-This will update changes made to the branch \<branch-name\>
+This will update changes made to the branch <branch-name\>
 
 ### How to Clone a repository
 
@@ -551,7 +545,7 @@ If you have followed up to this point then congratulations, you are good to go.Y
 
 <br>
 
-## 11. Resources:-
+## 11. Resources
 
 1. Frontend technologies
    1. <https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer>
