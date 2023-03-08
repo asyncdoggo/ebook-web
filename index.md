@@ -35,6 +35,8 @@ This is a document will provide a brief introduction to web development and tech
 
 10. [Git and Github](#10-git-and-github)
 
+11. [Resources](#11-resources)
+
 ## 1. Introduction
 
 Web development is the process of creating websites and web applications. Think of a website as a house, and web development as the construction process. Just as a house needs a blueprint and a team of builders, a website needs a design and a team of developers.
@@ -71,7 +73,7 @@ content here
 
 ## 3. Responsive Web Design
 
-hello
+content here
 
 ## 4. Libraries
 
@@ -86,6 +88,72 @@ One common example of web architecture is the classic client-server model. In th
 Web architecture also encompasses various other technologies and standards, such as HTML (Hypertext Markup Language) for structuring web content, CSS (Cascading Style Sheets) for styling web pages, and JavaScript for adding interactivity to web applications. In addition, there are numerous web frameworks and libraries available that can simplify web development and make it more efficient.
 
 ## 6. Frontend
+
+Front-end web development is the development of the graphical user interface of a website. The frontend is where the design comes to life in a beautiful combination of HTML, CSS, and JavaScript.
+
+Frontend is not only about making a user interface, but it is also about User experience. Frontend deals with presentation and making an interface that attracts users while maintaining utility.
+
+Frontend can be looked at in two parts:
+
+1. User expeirence/design:
+
+    The design of a frontend application is just as important as any other part. Without a good design any application will look dull. A good design should be interactive, should use appropriate animations and make proper use of fonts and colors. There are many more aspets to user experience one can think of.
+
+2. User Interface:
+
+    The user interface is the part of the frontend that is interactable such as buttons, textbox, etc. It deals with handling the data in the application. It decides and defines actions performed based on an event. A simple example of this would be clicking a button to change theme.
+
+A frontend application has another very important task:- Talking to the backend and manupilating data using APIs.
+
+### Frontend Frameworks
+
+Front-end frameworks have been gaining popularity in recent years as web development has become more complex and demanding. These frameworks offer a set of tools and conventions for building user interfaces and interactive web applications, allowing developers to work more efficiently and effectively.
+
+A front-end framework is a collection of pre-built and reusable tools, libraries, and technologies used to facilitate the creation of consistent and visually appealing user interfaces for web applications.
+
+These frameworks include various features such as pre-designed UI components, responsive layouts, and CSS styling, which help developers to create web applications with minimal effort and time.
+
+Some popular front-end frameworks include React, Angular, Vue.js and Materialize. These frameworks provide developers with a set of tools that enable them to focus on writing application logic rather than reinventing the wheel with respect to the user interface.
+
+A frontend framework makes managing a user interface easy. It helps by encapsulating components with the help of functions and classes.
+
+These functions and classes makes it easier to reuse code properly without worrying of clashing of variables or creating redundancy.
+
+### Examples of frameworks
+
+Angular, React, and Vue is three of the most popular front-end frameworks used in modern web development. While they have many similarities, they also have some key differences that set them apart.
+
+Lets take a look at these frameworks:
+
+1. Angular:
+
+    Angular is a full-fledged front-end framework developed by Google. It is a complete set of tools and features for building large-scale applications.
+
+* It has a steep learning curve due to complex architecture and dependency injection
+* It is a full-fledged framework with a complete set of tools and features for building large-scale applications
+* It has very good performance
+* It has large community support, but has decreased in recent years
+* It uses a template-based approach for defining the UI
+
+2. Vue:
+
+    Vue is a lightweight front-end framework that focuses on the view layer. It has gained popularity in recent years due to its simplicity and ease of use.
+
+* It is easy to learn and understand with a simple template syntax
+* It is a lightweight framework that focuses on the view layer
+* It gives good performance
+* It has a strong community support, but smaller than React
+* It uses a hybrid development approach that combines the template syntax with a reactive data-binding system
+
+3. React:
+
+    React is a library for building user interfaces. It is developed by Facebook and is known for its component-based approach and high performance.
+
+* It has a moderate learning curve, especially for developers already familiar with JavaScript
+* It is a library with a component-based approach and a focus on performance
+* It is fastest among the three frameworks in terms of performance
+* It has the largest community support among the three frameworks
+* It uses a component-based approach for breaking down the UI into reusable components
 
 ## 7. Backend
 
@@ -274,15 +342,6 @@ Here is a tabular comparison of the above languages
 </table>
 
 There are many other factors that involve when you choose a backend technology like :- requirements, experience of developers, cost and time, maintenance etc.
-
-Resources:
-
-1. <https://restfulapi.net/>
-2. <https://developer.mozilla.org/en-US/docs/Web/HTTP>
-3. <https://wiki.python.org/moin/WebFrameworks>
-4. <https://www.oracle.com/technical-resources/articles/javase/webapps-1.html>
-5. <https://www.php.net/>
-6. <https://nodejs.org/en/docs/guides/getting-started-guide/>
 
 ## 8. Database
 
@@ -492,10 +551,27 @@ If you have followed up to this point then congratulations, you are good to go.Y
 
 <br>
 
-## Resources:-
+## 11. Resources:-
 
-1. <https://www.freecodecamp.org/news/git-and-github-for-beginners/>
-2. <https://www.freecodecamp.org/news/how-to-use-basic-git-and-github-commands/>
-3. <https://www.youtube.com/watch?v=RGOj5yH7evk>
-4. <https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/>
-5. <https://github.com/about>
+1. Frontend technologies
+   1. <https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer>
+   2. <https://reactjs.org/tutorial/tutorial.html>
+   3. <https://vuejs.org/guide/introduction.html>
+   4. <https://angular.io/quick-start>
+<br>
+<br>
+2. Backend technologies
+   1. <https://restfulapi.net/>
+   2. <https://developer.mozilla.org/en-US/docs/Web/HTTP>
+   3. <https://wiki.python.org/moin/WebFrameworks>
+   4. <https://www.oracle.com/technical-resources/articles/javase/webapps-1.html>
+   5. <https://www.php.net/>
+   6. <https://nodejs.org/en/docs/guides/getting-started-guide/>
+<br>
+<br>
+3. Git and Github
+   1. <https://www.freecodecamp.org/news/git-and-github-for-beginners/>
+   2. <https://www.freecodecamp.org/news/how-to-use-basic-git-and-github-commands/>
+   3. <https://www.youtube.com/watch?v=RGOj5yH7evk>
+   4. <https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/>
+   5. <https://github.com/about>
