@@ -1,8 +1,8 @@
 var showdown  = require('showdown');
 var fs = require('fs');
-let filename = process.argv[4] || "README.md"
-let pageTitle = process.argv[2] || ""
-let plausibleDomain = process.argv[3] || ""
+let filename = process.argv[2] || "README.md"
+let pageTitle = ""
+let plausibleDomain =  ""
 var hljs = require ('highlight.js');
 
 showdown.extension('highlight', function () {
@@ -84,7 +84,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
 
       let markdownFileNameWithoutPath = filename.replace(".md", ".html")
       let filePath = process.cwd() + "/" + markdownFileNameWithoutPath
-      fs.writeFile(filePath, html, { flag: "wx" }, function(err) {
+      fs.writeFile(filePath, html, function(err) {
         if (err) {
           console.log("File '" + filePath + "' already exists. Aborted!");
         } else {

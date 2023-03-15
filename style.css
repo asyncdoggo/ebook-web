@@ -9,6 +9,7 @@ body {
     font-feature-settings: "kern" 1;
     font-kerning: normal;
     padding: 30px;
+    text-align: justify;
 }
 
 @media only screen and (max-width: 600px) {

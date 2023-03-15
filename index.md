@@ -53,11 +53,847 @@ Full-stack development involves working on both the front-end and back-end of a 
 
 ### 2.1 HTML
 
-Lorem ipsum
+HTML stands for "HyperText Markup Language," and it is used to create web pages. An HTML document is made up of a series of elements that define the structure and content of the page.
+
+The basic structure of an HTML document looks like this:
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>Heading 1</h1>
+    <p>Paragraph text goes here.</p>
+  </body>
+</html>
+```
+
+Here's what each part of the structure does:
+
+`<!DOCTYPE html>` - This is called a doctype declaration, and it tells the browser which version of HTML the page is using. In this case, it's HTML5.
+
+`<html>` - This element is the root element of the page, and it contains all the other elements on the page.
+
+`<head>` - This element contains information about the page that is not displayed to the user, such as the page title, metadata, and links to external resources.
+
+`<title>` - This element is used to specify the title of the page, which is displayed in the browser's title bar.
+
+`<body>` - This element contains all the visible content of the page, such as headings, paragraphs, images, and links.
+
+`<h1>` - This is a heading element, and it is used to create a main heading for the page.
+
+`<p>` - This is a paragraph element, and it is used to create blocks of text on the page.
+
+That's a basic overview of the structure of an HTML document. Of course, there are many more elements and attributes you can use to create more complex pages we will now see the most commonly used ones:
+
+Before we dive into commonly used HTML elements, let's first define what an attribute is.
+
+In HTML, an attribute provides additional information about an element. Attributes are used to specify characteristics of an element, such as its size, color, position, or behavior. They can be added to any HTML element using the element's opening tag, and they are written as name-value pairs.
+
+Here are some commonly applied attributes in HTML, along with their purposes:
+
+### `id` attribute
+
+The `id` attribute is used to uniquely identify an element on a web page. It is used to reference the element in CSS or JavaScript, making it easier to apply styles or behaviors to that specific element. The `id` attribute value should be unique on a page, meaning no two elements on the page should have the same `id` value.
+
+Example:
+
+```HTML
+<div id="header">
+  <h1>Welcome to my Website</h1>
+</div>
+```
+
+### `class` attribute
+
+The `class` attribute is used to identify a group of elements that share the same characteristics. It is used to apply a style or behavior to multiple elements at once. The `class` attribute value can be reused on different elements throughout the page.
+
+Example:
+
+```HTML
+<div class="container">
+  <h2 class="title">My Blog</h2>
+  <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+```
+
+### `style` attribute
+
+The `style` attribute is used to apply inline styles to an element. Inline styles override any styles applied to the element through CSS. The `style` attribute value should be a semicolon-separated list of CSS property-value pairs.
+
+Example:
+
+```HTML
+<div style="background-color: #F0F0F0; color: #333; font-size: 18px;">
+  <p>This text is styled inline.</p>
+</div>
+```
+
+These attributes are commonly used to add structure, style, and behavior to HTML elements. Knowing how and when to use them can help you create well-organized and visually appealing web pages.\
+\
+\
+Now Lets take a look at tags
+
+### `<div>` tag
+
+The HTML `<div>` tag is a very useful and flexible tag that allows you to group together other HTML elements and apply styles or JavaScript functions to them as a unit. It doesn't have any specific meaning on its own, but it acts as a container for other elements, which can be useful for organizing and structuring your code.
+
+Here's an example of how you might use the `<div>` tag:
+
+```HTML
+<div class="container">
+  <h1>Welcome to my website!</h1>
+  <p>This is a paragraph of text.</p>
+</div>
+```
+
+### `<p>` tag
+
+The `<p>` tag in HTML is used to create a paragraph of text. It is an inline element, meaning it is typically used within block-level elements like `<div>` or `<section>` to separate text into paragraphs.
+
+Here is an example of the `<p>` tag in use:
+
+```HTML
+<div>
+  <p>This is a paragraph of text.</p>
+  <p>This is another paragraph of text.</p>
+</div>
+```
+
+In this example, two paragraphs of text are contained within a `<div>` element. Each paragraph is enclosed in its own set of `<p>` tags.
+
+### `<img>` tag
+
+The `<img>` tag in HTML is used to display an image on a web page. It is an empty element, meaning it does not require a closing tag. Instead, its properties are specified using attributes.
+
+Here are some commonly used attributes of the `<img>` tag:
+
+- `src`: This attribute is used to specify the URL of the image file that should be displayed.
+
+- `alt`: This attribute is used to provide alternative text for the image. The text will be displayed if the image cannot be loaded, or if the user is using a screen reader.
+
+- `width` and `height`: These attributes are used to specify the width and height of the image, in pixels.
+
+Here is an example of the `<img>` tag in use:
+
+```HTML
+<img src="https://example.com/images/puppy.jpg" alt="A cute puppy" width="500" height="400">
+```
+
+In this example, the `<img>` tag displays an image of a puppy. The `src` attribute specifies the URL of the image file, while the `alt`, `width`, and `height` attributes provide additional information about the image.
+
+### `<a>` tag
+
+The `<a>` tag in HTML is used to create a hyperlink to another web page or resource. It can also be used to create links to email addresses or other types of files.
+
+Here are some commonly used attributes of the `<a>` tag:
+
+- `href`: This attribute is used to specify the URL of the web page or resource that the link should point to.
+
+- `target`: This attribute is used to specify where the linked page should be displayed. For example, it can be set to "_blank" to open the linked page in a new browser tab or window.
+
+- `title`: This attribute is used to provide additional information about the link. It is often displayed as a tooltip when the user hovers their mouse over the link.
+
+Here is an example of the `<a>` tag in use:
+
+```HTML
+<a href="https://example.com" target="_blank" title="Visit Example.com">Visit Example.com</a>
+```
+
+In this example, the `<a>` tag creates a hyperlink to the website "example.com". The `href` attribute specifies the URL of the website, while the `target` attribute opens the website in a new browser tab or window. The `title` attribute provides additional information about the link.
+
+### list tags
+
+HTML provides three types of list tags: `<ul>`, `<ol>`, and `<li>`.
+
+- The `<ul>` tag is used to create an unordered list. This means that the items in the list are not numbered, and are typically displayed with bullet points or some other type of symbol.
+
+- The `<ol>` tag is used to create an ordered list. This means that the items in the list are numbered, starting from 1 by default.
+
+- The `<li>` tag is used to create list items. Each individual item in a list should be wrapped in an `<li>` tag.
+
+Here is an example of an unordered list:
+
+```HTML
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+In this example, the `<ul>` tag creates an unordered list. Each individual list item is represented by an `<li>` tag.
+
+Here is an example of an ordered list:
+
+```HTML
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>
+```
+
+In this example, the `<ol>` tag creates an ordered list. Each individual list item is represented by an `<li>` tag.
+
+And finally, here is an example of nested lists:
+
+```HTML
+<ul>
+  <li>Item 1
+    <ul>
+      <li>Sub-item 1</li>
+      <li>Sub-item 2</li>
+    </ul>
+  </li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+### `<script>` and `<style>` tags
+
+HTML also provides `<script>` and `<style>` tags which are used to include scripts and styles in an HTML document.
+
+- The `<script>` tag is used to include client-side scripts, typically JavaScript. The contents of this tag are executed by the client's web browser. The `src` attribute can be used to specify an external script file to include.
+
+Here is an example of including a script in an HTML document:
+
+```HTML
+<script>
+  function myFunction() {
+    alert("Hello World!");
+  }
+</script>
+```
+
+In this example, the contents of the `<script>` tag define a JavaScript function. This function will be executed when called from other JavaScript code or from an HTML event attribute.
+
+Here is an example of including an external script file:
+
+```HTML
+<script src="myscript.js"></script>
+```
+
+In this example, the `src` attribute is used to specify an external JavaScript file to include.
+
+- The `<style>` tag is used to define styles for an HTML document. These styles can be used to control the appearance of elements on the page. The `type` attribute should be set to "text/css" to indicate that the contents of the tag are CSS code.
+
+Here is an example of defining styles using a `<style>` tag:
+
+```HTML
+<style type="text/css">
+  body {
+    background-color: lightblue;
+  }
+  h1 {
+    color: navy;
+    font-size: 24px;
+  }
+</style>
+```
+
+In this example, the contents of the `<style>` tag define CSS styles for the `<body>` and `<h1>` elements.
+
+### `<form>` tag
+
+The `<form>` tag is used to create an HTML form for user input. The form can be used to submit data to a server for processing.
+
+Here is an example of a simple form:
+
+```HTML
+<form action="/process-form" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  
+  <input type="submit" value="Submit">
+</form>
+```
+
+In this example, the form has an `action` attribute that specifies where the form data will be sent when it is submitted. The `method` attribute specifies whether the data should be submitted using the HTTP POST or GET method.
+
+The form contains two input fields for the user to enter their name and email address. The `label` element is used to provide a description for each input field. The `for` attribute of the `label` element should match the `id` attribute of the corresponding input field.
+
+The form also contains a submit button that the user can click to submit the form data to the server.
+
+The example above is just a simple form. In practice, HTML forms can contain many different types of input fields and may be used for a wide variety of purposes.
+
+### `<table>` tag
+
+The `<table>` tag is used to create an HTML table.
+
+Here is an example of a simple table:
+
+``` html
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>25</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <td>Jane</td>
+      <td>30</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>42</td>
+      <td>Male</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+In this example, the `<table>` tag defines the beginning and end of the table. The `<thead>` tag is used to define the header section of the table, which contains the column headings. The `<tr>` tag is used to define each row of the table, and the `<th>` tag is used to define each cell of the header row.
+
+The `<tbody>` tag is used to define the body section of the table, which contains the actual data. Each row of data is defined using the `<tr>` tag, and each cell of the row is defined using the `<td>` tag.
+
+Additionally, the `<table>` tag can have several attributes to customize its appearance and behavior, including:
+
+- `border`: Specifies the width of the border around the table. Default is 0.
+- `cellpadding`: Specifies the amount of space between the cell content and the cell borders. Default is 1.
+- `cellspacing`: Specifies the amount of space between cells. Default is 2.
+- `width`: Specifies the width of the table in pixels or percentage.
+- `height`: Specifies the height of the table in pixels or percentage.
+- `align`: Specifies the horizontal alignment of the table within its container. Valid values are "left", "center", or "right".
+- `bgcolor`: Specifies the background color of the table.
 
 ### 2.2 CSS
 
-content here
+CSS is like the fashion designer of the internet world. It's the one that takes plain and boring web pages and makes them stylish and beautiful, just like how fashion designers transform plain fabrics into amazing clothing.
+
+With CSS, you can add colors, fonts, images, and layouts to your website. It's like choosing the right accessories, shoes, and makeup to match your outfit. You can even make certain elements move, just like how models strut down the runway.
+
+And just like how fashion designers have their own unique styles, you can customize your CSS to create a unique look and feel for your website. It's all about expressing yourself and making your website stand out from the crowd.
+
+So if you want your website to look sharp, stylish, and fashionable, CSS is your go-to tool!
+
+### Selectors
+
+Selection by class, tag, and ID are three different ways of targeting specific elements in CSS.
+
+Selection by class:
+Classes are used to group elements that have something in common. To select an element with a particular class, you can use the class selector (`.`) followed by the class name.
+
+Example:
+
+```html
+<div class="box">This is a box</div>
+```
+
+```css
+.box {
+  background-color: #ccc;
+  padding: 10px;
+}
+```
+
+In this example, we are targeting the element with class "box" and applying a gray background color and 10px padding.
+
+Selection by tag:
+Tags refer to the HTML tags that define elements on a web page. To select all elements of a particular tag, you can use the tag selector followed by the tag name.
+
+Example:
+
+```html
+<h1>Header 1</h1>
+<p>This is a paragraph</p>
+```
+
+```css
+h1 {
+  color: blue;
+}
+
+p {
+  font-size: 16px;
+}
+```
+
+In this example, we are targeting the `h1` and `p` tags and applying different styles to each. The `h1` tag will have blue text color, while the `p` tag will have a font size of 16px.
+
+Selection by ID:
+IDs are used to uniquely identify an element on a web page. To select an element with a particular ID, you can use the ID selector (`#`) followed by the ID name.
+
+Example:
+
+```html
+<div id="header">This is the header</div>
+```
+
+```css
+#header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+```
+
+In this example, we are targeting the element with ID "header" and applying a black background color, white text color, and 10px padding.
+
+### Descendant selector
+
+Selecting the inner item of a selected item in CSS is known as a descendant selector. It allows you to target an element that is nested inside another element, and apply styles specifically to that inner element.
+
+For example, let's say you have an HTML structure like this:
+
+```html
+<div class="outer">
+  <h2>Heading</h2>
+  <p>Paragraph</p>
+</div>
+```
+
+If you want to style the `p` element specifically when it is inside the `div` element with class `outer`, you can use the descendant selector like this:
+
+```css
+.outer p {
+  color: red;
+}
+```
+
+This will apply the `color: red;` style only to the `p` element that is a descendant of the `div` element with class `outer`.
+
+Another example, let's say you have an HTML structure like this:
+
+```html
+<ul>
+  <li>List Item 1
+    <ul>
+      <li>Sub-Item 1</li>
+      <li>Sub-Item 2</li>
+    </ul>
+  </li>
+  <li>List Item 2</li>
+</ul>
+```
+
+If you want to style the `li` elements that are nested inside the inner `ul` element, you can use the descendant selector like this:
+
+```css
+ul ul li {
+  font-weight: bold;
+}
+```
+
+This will apply the `font-weight: bold;` style only to the `li` elements that are descendants of the inner `ul` element.
+
+### `display: flex`
+
+`display: flex` is a value for the CSS `display` property that allows you to create flexible and responsive layouts. It works by setting a parent container as a flex container, which enables you to easily manipulate the layout and alignment of its child elements.
+
+Here's a simple example of how to use `display: flex` to center a child element within a parent container:
+
+```html
+<div class="container">
+  <div class="child">Hello World!</div>
+</div>
+```
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.child {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+}
+```
+
+In this example, `display: flex` is used to create a flex container for the parent `div` element with class `.container`. The `justify-content` and `align-items` properties are used to center the child element both horizontally and vertically. The child element itself has a blue background color, white text color, and some padding.
+
+### `display: block`
+
+`display: block` is a value for the CSS `display` property that is used to make an element behave as a block-level element. Block-level elements take up the full width of their parent container by default, and each element is placed on a new line.
+
+Here's an example of how to use `display: block` to create a simple form:
+
+```html
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  <br>
+  <button type="submit">Submit</button>
+</form>
+```
+
+```css
+form {
+  display: block;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+```
+
+In this example, `display: block` is used to make each form element behave as a block-level element. The `label` elements are displayed as block-level elements with a bottom margin to create some space between each label and input. The `input` elements are also displayed as block-level elements with a width of 100% to fill the full width of their parent container. Finally, the `button` element is displayed as a block-level element and given some styling to make it stand out.
+
+### `display: inline`
+
+`display: inline` is a value for the CSS `display` property that is used to make an element behave as an inline-level element. Inline-level elements only take up as much width as they need to display their content, and multiple inline-level elements can appear on the same line.
+
+Here's an example of how to use `display: inline` to create a simple navigation menu:
+
+```
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+```
+
+```
+nav {
+  display: block;
+}
+
+a {
+  display: inline;
+  margin-right: 10px;
+  text-decoration: none;
+  color: blue;
+}
+```
+
+In this example, `display: inline` is used to make the anchor elements (`<a>`) behave as inline-level elements so that they appear on the same line. The `margin-right` property is used to create some space between each link, and the `text-decoration` and `color` properties are used to style the links. The parent `nav` element is set to `display: block` to ensure that it takes up the full width of its parent container.
+
+### `display: inline-block`
+
+`display: inline-block` is a value for the CSS `display` property that combines the features of both `display: inline` and `display: block`. Elements with `display: inline-block` are similar to inline-level elements in that they take up only as much width as they need to display their content, but they can also have a fixed width, height, and padding, similar to block-level elements.
+
+Here's an example of how to use `display: inline-block` to create a simple navigation menu with a fixed width and height:
+
+```html
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+```
+
+```css
+nav {
+  display: block;
+  width: 100%;
+}
+
+a {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+```
+
+In this example, the `nav` element is displayed as a block-level element with a width of 100%. Each `a` element within the navigation menu is displayed as an inline-block element with a fixed width of 100px, a height of 50px, and some padding to create space around the text. The background color, text color, and other styling are added to make the navigation menu look more appealing. The `margin-right` property is used to create some space between each navigation link.
+
+### Positioning
+
+CSS Positioning allows you to control the position and layout of elements on your webpage. There are three commonly used position values: absolute, relative, and fixed.
+
+### Relative
+
+Relative positioning is the default positioning value for most HTML elements. With relative positioning, an element's position is based on its original position in the HTML document. So, if you add `position: relative` to an element and then use the `top`, `bottom`, `left`, or `right` properties to adjust its position, it will move relative to its original position. This means that other elements on the page will still flow around it, even if it's moved.
+
+Here's an example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        position: relative;
+        left: 50px;
+        top: 50px;
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <p>This is some text.</p>
+  </body>
+</html>
+```
+
+In this example, we have a `div` element with the class `box`. We've set its `position` to `relative`, which means that it will be positioned relative to its original position in the HTML document.
+
+We've also set its `left` and `top` properties to `50px`, which means that it will move 50 pixels to the right and 50 pixels down from its original position.
+
+The `background-color`, `height`, and `width` properties are just styling properties to give the box a blue background color and a height and width of 100 pixels.
+
+Below the `div` element, we have a paragraph (`<p>`) element with some text in it. Since the `div` element has relative positioning, the paragraph element will flow around it, as if the `div` element were still in its original position.
+
+### Absolute
+
+With absolute positioning, an element's position is based on its closest positioned ancestor element. If an ancestor element is not positioned (i.e., it doesn't have a `position` property set to `relative`, `absolute`, or `fixed`), then the element will be positioned relative to the `html` element.
+
+Here's an example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+      }
+
+      .container {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+    <p>This is some text.</p>
+  </body>
+</html>
+```
+
+In this example, we have a `div` element with the class box. We've set its position to absolute, which means that it will be positioned relative to its closest positioned ancestor element.
+
+The closest positioned ancestor element is the `div` element with the class container. We've set its `position` to `relative`, which means that it will be the closest positioned ancestor element for the `div` with class `box`. We've also set its `height`, `width`, and `border` properties to give it some dimensions and a visible border.
+
+We've set the `top` and `right` properties of the `box` element to `50px`, which means that it will be positioned 50 pixels from the top of its closest positioned ancestor element (i.e., the top of the `container` element) and 50 pixels from the right of its closest positioned ancestor element (i.e., the right side of the `container` element).
+
+The `background-color`, `height`, and `width` properties are just styling properties to give the box a blue background color and a height and `width` of 100 pixels.
+
+Below the `div` element, we have a paragraph `<p>` element with some text in it. Since the `div` element with class `container` has relative positioning, the paragraph element will flow around it, as if the `div` element were still in its original position.
+
+### Fixed
+
+With `position: fixed`, an element is positioned relative to the viewport, which means that it will stay in the same position even if the page is scrolled.
+
+Here's an example:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <p>This is some text.</p>
+  </body>
+</html>
+```
+
+In this example, we have a `div` element with the class `box`. We've set its `position` to `fixed`, which means that it will be positioned relative to the viewport (i.e., the browser window), and will not move when the user scrolls the page.
+
+We've set the `top` and `right` properties of the `box` element to `50px`, which means that it will be positioned 50 pixels from the top of the viewport and 50 pixels from the right of the viewport.
+
+The `background-color`, `height`, and `width` properties are just styling properties to give the box a blue background color and a height and width of 100 pixels.
+
+Below the `div` element, we have a paragraph (`<p>`) element with some text in it. Since the `div` element has fixed positioning, the paragraph element will flow behind it, as if the `div` element were not there at all.
+
+### Padding and Margin
+
+- `margin`: Margin refers to the space between an element and its neighboring elements. It is used to create space around an element and to separate it from other elements on the page. Margin is specified using the `margin` property, and you can set values for the top, right, bottom, and left margins individually, or use shorthand notation to set all four margins at once.
+
+- `padding`: Padding refers to the space between an element's content and its border. It is used to create space within an element, and to separate the element's content from its border. Padding is specified using the `padding` property, and like `margin`, you can set values for the top, right, bottom, and left padding individually, or use shorthand notation to set all four paddings at once.
+
+Here's an example of using `margin` and `padding` in CSS:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        margin: 20px;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">This is some text inside a box.</div>
+  </body>
+</html>
+```
+
+In this example, we have a `div` element with the class `box`. We've set its `margin` to `20px`, which creates a margin of 20 pixels around the entire box. We've set its `padding` to `10px`, which creates padding of 10 pixels between the content and the border of the box.
+
+We've also set the `background-color` to blue and the `color` to white, so the text inside the box is white on a blue background.
+
+I hope this example helps you understand how `margin` and `padding` work! Let me know if you have any other questions.
+
+### `flex-column` and `flex-row`
+
+- `flex-column`: `flex-column` is a value for the `flex-direction` property. It is used to create a vertical flex container, meaning that the flex items are laid out vertically from top to bottom. With `flex-column`, the main axis is vertical and the cross axis is horizontal.
+
+- `flex-row`: `flex-row` is also a value for the `flex-direction` property. It is used to create a horizontal flex container, meaning that the flex items are laid out horizontally from left to right. With `flex-row`, the main axis is horizontal and the cross axis is vertical.
+
+Here's an example of using `flex-column` and `flex-row` in CSS:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row; /* this could also be flex-row */
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        background-color: lightgray;
+      }
+
+      .item {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Flex Column</h2>
+    <div class="container" style="flex-direction: column;">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+
+    <h2>Flex Row</h2>
+    <div class="container" style="flex-direction: row;">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+</html>
+```
+
+In this example, we have a `div` with the class `container` that has three child elements with the class `item`. We've set the `display` property of the `container` to `flex`, which creates a flex container, and we've set the `flex-direction` property to `row` for the first container and `column` for the second container.
+
+We've also set the `justify-content` property to `center` and the `align-items` property to `center`, which centers the flex items both horizontally and vertically within the container.
+
+Finally, we've given the `item` elements a width and height, some margin, and a white background color, so they're visible within the container.
+
+I hope this example helps you understand how `flex-column` and `flex-row` work! Let me know if you have any other questions.
+
+### Pseudo Elements
+
+Pseudo-elements and pseudo-classes are CSS selectors that allow you to style specific parts of an HTML element.
+
+Pseudo-elements are used to style a specific part of an element, such as the first line of text or the first letter of a paragraph. They are denoted by double colons (::) preceding the element name, and the most common ones are `::before` and `::after`. For example, you can use `::before` to add content before an element and `::after` to add content after an element.
+
+Example:
+
+```CSS
+p::before {
+  content: "Read this: ";
+}
+```
+
+This will add the text "Read this: " before every paragraph on the page.
+
+Pseudo-classes, on the other hand, are used to style an element based on its state, such as when the user hovers over it or clicks on it. They are denoted by a colon (:), and some of the most common ones are `:hover`, `:active`, `:focus`, and `:visited`.
+
+Example:
+
+```CSS
+a:hover {
+  color: red;
+}
+```
+
+This will change the color of a hyperlink to red when the user hovers over it.
+
+Combined, pseudo-elements and pseudo-classes can be used to create powerful and dynamic CSS effects that can enhance the user experience of a website.
+
+### Media Query
+
+Media queries are a powerful feature of CSS that allow you to apply different styles to your web page based on the size and characteristics of the device it is being viewed on. With media queries, you can make your web page look great on any device, from a small smartphone screen to a large desktop monitor.
+
+Media queries are written using the `@media` rule, which has a similar syntax to other CSS rules. Inside the `@media` rule, you specify the conditions under which the styles inside the rule should be applied.
+
+Here's an example of a media query that applies a different background color to the body element when the screen width is less than or equal to 768 pixels:
+
+```CSS
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+In this example, `(max-width: 768px)` is the condition that must be true for the styles inside the media query to be applied. In this case, the condition is that the maximum width of the viewport is 768 pixels or less. If this condition is true, then the styles inside the media query (which in this case apply a light blue background color to the body element) will be applied.
+
+Media queries can be used to apply a wide range of styles to your web page based on the characteristics of the device it is being viewed on. For example, you can use media queries to adjust font sizes, hide or show certain elements, or change the layout of your page based on the screen size.
 
 ### 2.3 JavaScript
 
@@ -129,31 +965,31 @@ Lets take a look at these frameworks:
 
     Angular is a full-fledged front-end framework developed by Google. It is a complete set of tools and features for building large-scale applications.
 
-* It has a steep learning curve due to complex architecture and dependency injection
-* It is a full-fledged framework with a complete set of tools and features for building large-scale applications
-* It has very good performance
-* It has large community support, but has decreased in recent years
-* It uses a template-based approach for defining the UI
+- It has a steep learning curve due to complex architecture and dependency injection
+- It is a full-fledged framework with a complete set of tools and features for building large-scale applications
+- It has very good performance
+- It has large community support, but has decreased in recent years
+- It uses a template-based approach for defining the UI
 
 2. Vue:
 
     Vue is a lightweight front-end framework that focuses on the view layer. It has gained popularity in recent years due to its simplicity and ease of use.
 
-* It is easy to learn and understand with a simple template syntax
-* It is a lightweight framework that focuses on the view layer
-* It gives good performance
-* It has a strong community support, but smaller than React
-* It uses a hybrid development approach that combines the template syntax with a reactive data-binding system
+- It is easy to learn and understand with a simple template syntax
+- It is a lightweight framework that focuses on the view layer
+- It gives good performance
+- It has a strong community support, but smaller than React
+- It uses a hybrid development approach that combines the template syntax with a reactive data-binding system
 
 3. React:
 
     React is a library for building user interfaces. It is developed by Facebook and is known for its component-based approach and high performance.
 
-* It has a moderate learning curve, especially for developers already familiar with JavaScript
-* It is a library with a component-based approach and a focus on performance
-* It is fastest among the three frameworks in terms of performance
-* It has the largest community support among the three frameworks
-* It uses a component-based approach for breaking down the UI into reusable components
+- It has a moderate learning curve, especially for developers already familiar with JavaScript
+- It is a library with a component-based approach and a focus on performance
+- It is fastest among the three frameworks in terms of performance
+- It has the largest community support among the three frameworks
+- It uses a component-based approach for breaking down the UI into reusable components
 
 ## 7. Backend
 
@@ -547,14 +1383,14 @@ If you have followed up to this point then congratulations, you are good to go.Y
 
 ## 11. Resources
 
-1. Frontend technologies
+- Frontend technologies
    1. <https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer>
    2. <https://reactjs.org/tutorial/tutorial.html>
    3. <https://vuejs.org/guide/introduction.html>
    4. <https://angular.io/quick-start>
 <br>
 <br>
-2. Backend technologies
+- Backend technologies
    1. <https://restfulapi.net/>
    2. <https://developer.mozilla.org/en-US/docs/Web/HTTP>
    3. <https://wiki.python.org/moin/WebFrameworks>
@@ -563,7 +1399,7 @@ If you have followed up to this point then congratulations, you are good to go.Y
    6. <https://nodejs.org/en/docs/guides/getting-started-guide/>
 <br>
 <br>
-3. Git and Github
+- Git and Github
    1. <https://www.freecodecamp.org/news/git-and-github-for-beginners/>
    2. <https://www.freecodecamp.org/news/how-to-use-basic-git-and-github-commands/>
    3. <https://www.youtube.com/watch?v=RGOj5yH7evk>
