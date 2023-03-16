@@ -1,9 +1,9 @@
-var showdown  = require('showdown');
+var showdown = require('showdown');
 var fs = require('fs');
 let filename = process.argv[2] || "README.md"
 let pageTitle = ""
-let plausibleDomain =  ""
-var hljs = require ('highlight.js');
+let plausibleDomain = ""
+var hljs = require('highlight.js');
 
 showdown.extension('highlight', function () {
   function htmlunencode(text) {
@@ -12,20 +12,20 @@ showdown.extension('highlight', function () {
         .replace(/&amp;/g, '&')
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
-      );
+    );
   }
   return [{
     type: "output",
     filter: function (text, converter, options) {
       var left = "<pre><code\\b[^>]*>",
-          right = "</code></pre>",
-          flags = "g";
+        right = "</code></pre>",
+        flags = "g";
       var replacement = function (wholeMatch, match, left, right) {
         match = htmlunencode(match);
         var lang = (left.match(/class=\"([^ \"]+)/) || [])[1];
         left = left.slice(0, 18) + 'hljs ' + left.slice(18);
         if (lang && hljs.getLanguage(lang)) {
-          return left + hljs.highlight(match, {language: lang}).value + right;
+          return left + hljs.highlight(match, { language: lang }).value + right;
         } else {
           return left + hljs.highlightAuto(match).value + right;
         }
@@ -36,10 +36,10 @@ showdown.extension('highlight', function () {
 });
 
 fs.readFile(__dirname + '/style.css', function (err, styleData) {
-  fs.readFile(__dirname + '/node_modules/highlight.js/styles/atom-one-dark.css', function(err, highlightingStyles) {
+  fs.readFile(__dirname + '/node_modules/highlight.js/styles/atom-one-light.css', function (err, highlightingStyles) {
     fs.readFile(process.cwd() + '/' + filename, function (err, data) {
       if (err) {
-        throw err; 
+        throw err;
       }
       let text = data.toString();
 
@@ -84,7 +84,7 @@ fs.readFile(__dirname + '/style.css', function (err, styleData) {
 
       let markdownFileNameWithoutPath = filename.replace(".md", ".html")
       let filePath = process.cwd() + "/" + markdownFileNameWithoutPath
-      fs.writeFile(filePath, html, function(err) {
+      fs.writeFile(filePath, html, function (err) {
         if (err) {
           console.log("File '" + filePath + "' already exists. Aborted!");
         } else {

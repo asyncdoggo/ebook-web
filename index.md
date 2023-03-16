@@ -1,8 +1,8 @@
 # A comprehensive guide to web development
 
-This a documentation by the developers of GDSC MMCOE, Pune.
+This is a 'getting started' documentation for web development.
 
-This is a document will provide a brief introduction to web development and technologies. By following through we intend to make you aware of several concepts related to web and internet while maintaining a simple language for everyone to comprehend.
+This document will provide a brief introduction to web development and technologies. By following through we intend to make you aware of several concepts related to web and internet while maintaining a simple language for everyone to comprehend.
 
 ## Chapters
 
@@ -15,9 +15,7 @@ This is a document will provide a brief introduction to web development and tech
 
     2.3 [JavaScript](#2.3-javascript)
 
-    2.4 [Advanced JS](#2.4-advanced-js)
-
-    2.5 [Data Validation](#2.5-data-validation)
+    2.4 [Data Validation](#2.5-data-validation)
 
 3. [Responsive Web Design](#3-responsive-web-design)
 
@@ -36,6 +34,8 @@ This is a document will provide a brief introduction to web development and tech
 10. [Git and Github](#10-git-and-github)
 
 11. [Resources](#11-resources)
+
+12. [Credits](#12-credits)
 
 ## 1. Introduction
 
@@ -131,9 +131,9 @@ Example:
 </div>
 ```
 
-These attributes are commonly used to add structure, style, and behavior to HTML elements. Knowing how and when to use them can help you create well-organized and visually appealing web pages.\
-\
-\
+These attributes are commonly used to add structure, style, and behavior to HTML elements. Knowing how and when to use them can help you create well-organized and visually appealing web pages. <br>
+<br>
+<br>
 Now Lets take a look at tags
 
 ### `<div>` tag
@@ -897,21 +897,973 @@ Media queries can be used to apply a wide range of styles to your web page based
 
 ### 2.3 JavaScript
 
-content here
+JavaScript is a programming language that was specifically designed to work with web browsers. It's often used to add interactivity to web pages, like animations, pop-up windows, and form validations. In simpler terms, it's the programming language that makes websites do things beyond just displaying text and images.
 
-### 2.4 Advanced JS
+JavaScript is a crucial part of web development because it enables developers to create dynamic and interactive web pages that respond to user input in real-time. Without JavaScript, web pages would be static and unresponsive, requiring users to constantly refresh the page to see any changes.
 
-content here
+JavaScript can also be used to create complex web applications, such as social media platforms, e-commerce sites, and online games. These types of applications require a lot of functionality and interactivity, and JavaScript provides the tools necessary to build them.
+
+### Variable Declaration
+
+In JavaScript, let, var, and const are all used to declare variables, which are used to store values that can be changed or manipulated within a program. However, each of these keywords has its own specific purpose and behavior.
+
+### var
+
+var was traditionally used to declare variables in JavaScript. However, since the introduction of let and const, var has fallen out of favor. One of the main differences between var and the other two keywords is that var has function-level scope, while let and const have block-level scope. This means that var declarations are accessible anywhere within the function they are declared in, while let and const declarations are only accessible within the block they are declared in (e.g., a loop or an if statement). Additionally, var allows for variable hoisting, meaning that a variable can be declared after it is used in the code.
+
+example:
+
+```Javascript
+function exampleFunction() {
+  var x = 1;
+  if (true) {
+    var x = 2;
+    console.log(x); // Output: 2
+  }
+  console.log(x); // Output: 2
+}
+
+exampleFunction();
+```
+
+In this example, `var` is used to declare the variable `x`. The variable is declared at the function level and can be accessed anywhere within the function. In this case, `x` is reassigned a new value inside the `if` statement, and that value is also accessible outside of the `if` statement.
+
+### let
+
+let is used to declare variables that can be reassigned a new value. Unlike var, let does not allow for hoisting and has block-level scope. This means that a let declaration must come before the variable is used, and it can only be accessed within the block it is declared in.
+
+example:
+
+```Javascript
+function exampleFunction() {
+  let x = 1;
+  if (true) {
+    let x = 2;
+    console.log(x); // Output: 2
+  }
+  console.log(x); // Output: 1
+}
+
+exampleFunction();
+```
+
+In this example, `let` is used to declare the variable `x`. The variable is declared at the block level and can only be accessed within the `if` statement. In this case, `x` is reassigned a new value inside the `if` statement, but that value is not accessible outside of the `if` statement.
+
+### const
+
+const is used to declare variables that cannot be reassigned a new value. Once a value is assigned to a const variable, it cannot be changed. Like let, const has block-level scope and does not allow for hoisting.
+
+`const` example:
+
+```javascript
+function exampleFunction() {
+  const x = 1;
+  if (true) {
+    const x = 2;
+    console.log(x); // Output: 2
+  }
+  console.log(x); // Output: 1
+}
+
+exampleFunction();
+```
+
+In this example, `const` is used to declare the variable `x`. The variable is declared at the block level and can only be accessed within the `if` statement. However, unlike `let`, `const` cannot be reassigned a new value. In this case, `x` is assigned a value of `2` inside the `if` statement, but that value is not accessible outside of the `if` statement.
+
+### Data Types in JavaScript
+
+JavaScript is a dynamically typed language, which means that variables can hold values of different types. Here are the main data types in JavaScript:
+
+- **String**: A string is a sequence of characters enclosed in single or double quotes. For example: `"Hello, world!"`.
+
+- **Number**: A number can be an integer or a decimal, positive or negative. For example: `42`, `3.14`.
+
+- **Boolean**: A boolean represents one of two values: `true` or `false`.
+
+- **Undefined**: A variable that has not been assigned a value is undefined. For example: `let x; console.log(x); // Output: undefined`.
+
+- **Null**: Null represents the intentional absence of any object value. For example: `let x = null; console.log(x); // Output: null`.
+
+- **Object**: An object is a collection of properties, where each property has a key and a value. For example:
+
+  ```javascript
+  let person = {
+    name: "John",
+    age: 30,
+    isStudent: true
+  };
+  ```
+
+- **Array**: An array is a collection of values, where each value has an index. For example:
+
+  ```javascript
+  let fruits = ["apple", "banana", "orange"];
+  ```
+
+- **Function**: A function is a reusable block of code that performs a specific task. Functions can take parameters as input and return a value as output. For example:
+
+  ```javascript
+  function addNumbers(a, b) {
+    return a + b;
+  }
+  ```
+
+JavaScript also has a special data type called `Symbol`, which is used for creating unique identifiers.
+
+### Coercion in JavaScript
+
+Coercion is the process of converting a value from one type to another. In JavaScript, coercion can occur implicitly or explicitly.
+
+- **Implicit coercion**: Implicit coercion occurs when JavaScript automatically converts a value from one type to another without the programmer's knowledge or consent. This can lead to unexpected behavior and bugs in code. For example:
+
+  ```javascript
+  console.log(5 + "5"); // Output: "55"
+  console.log(true + true); // Output: 2
+  ```
+
+  In the first example, JavaScript coerces the number `5` into a string and concatenates it with the string `"5"`. In the second example, JavaScript coerces the booleans `true` into the number `1` and adds them together.
+
+- **Explicit coercion**: Explicit coercion occurs when a programmer intentionally converts a value from one type to another using built-in functions or operators. This is typically done to ensure that the code behaves as expected. For example:
+
+  ```javascript
+  console.log(Number("5")); // Output: 5
+  console.log(String(5)); // Output: "5"
+  console.log(Boolean(0)); // Output: false
+  ```
+
+  In the first example, the `Number()` function explicitly coerces the string `"5"` into the number `5`. In the second example, the `String()` function explicitly coerces the number `5` into the string `"5"`. In the third example, the `Boolean()` function explicitly coerces the number `0` into the boolean `false`.
+
+It's important to be aware of coercion in JavaScript and to use it intentionally and carefully to avoid unexpected behavior and bugs in code.
+
+### Asynchronous Nature of JS
+
+JavaScript is an asynchronous programming language, which means that code can run in the background without blocking other code from executing. This is achieved through the use of callbacks, promises, and async/await.
+
+- **Callbacks**: A callback is a function that is passed as an argument to another function and is executed when the other function completes. Callbacks are commonly used for asynchronous operations, such as fetching data from a server or reading a file. For example:
+
+  ```javascript
+  function fetchData(callback) {
+    setTimeout(() => {
+      callback("Data fetched successfully!");
+    }, 2000);
+  }
+
+  fetchData((data) => {
+    console.log(data); // Output: "Data fetched successfully!"
+  });
+  ```
+
+  In this example, the `fetchData()` function takes a callback function as an argument and simulates fetching data from a server using a `setTimeout()` function. The `fetchData()` function then executes the callback function with the fetched data as an argument.
+
+- **Promises**: A promise is an object that represents the eventual completion or failure of an asynchronous operation and allows you to handle the result as either a success or failure. Promises are commonly used for asynchronous operations, such as fetching data from a server or reading a file. For example:
+
+  ```javascript
+  function fetchData() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Data fetched successfully!");
+      }, 2000);
+    });
+  }
+
+  fetchData()
+    .then((data) => {
+      console.log(data); // Output: "Data fetched successfully!"
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  ```
+
+  In this example, the `fetchData()` function returns a promise that simulates fetching data from a server using a `setTimeout()` function. The `fetchData()` function then resolves the promise with the fetched data, which can be handled using the `then()` method.
+
+- **Async/await**: Async/await is a way to write asynchronous code that looks and behaves like synchronous code. Async/await is built on top of promises and allows you to write asynchronous code in a more readable and maintainable way. For example:
+
+  ```javascript
+  async function fetchData() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Data fetched successfully!");
+      }, 2000);
+    });
+  }
+
+  async function logData() {
+    const data = await fetchData();
+    console.log(data); // Output: "Data fetched successfully!"
+  }
+
+  logData();
+  ```
+
+  In this example, the `fetchData()` function returns a promise that simulates fetching data from a server using a `setTimeout()` function. The `logData()` function uses the `await` keyword to wait for the promise to resolve and then logs the fetched data to the console.
+
+JavaScript's asynchronous nature is a powerful feature that allows developers to write complex applications that can handle multiple tasks simultaneously without blocking the main thread. However, it requires careful consideration and understanding of asynchronous programming concepts to avoid errors and unexpected behavior in code.
+
+### Operators in JS
+
+Operators are used to perform operations on values or variables in JavaScript. There are several types of operators in JavaScript, including arithmetic, assignment, comparison, logical, and bitwise operators.
+
+- **Arithmetic operators**: Arithmetic operators are used to perform basic arithmetic operations, such as addition, subtraction, multiplication, and division. For example:
+
+  ```javascript
+  let a = 10;
+  let b = 5;
+
+  console.log(a + b); // Output: 15
+  console.log(a - b); // Output: 5
+  console.log(a * b); // Output: 50
+  console.log(a / b); // Output: 2
+  console.log(a % b); // Output: 0
+  ```
+
+  In this example, the `+`, `-`, `*`, `/`, and `%` operators are used to perform addition, subtraction, multiplication, division, and modulus operations, respectively.
+
+- **Assignment operators**: Assignment operators are used to assign values to variables. For example:
+
+  ```javascript
+  let a = 10;
+  let b = 5;
+
+  a += b; // Equivalent to a = a + b;
+  console.log(a); // Output: 15
+
+  a -= b; // Equivalent to a = a - b;
+  console.log(a); // Output: 10
+
+  a *= b; // Equivalent to a = a * b;
+  console.log(a); // Output: 50
+
+  a /= b; // Equivalent to a = a / b;
+  console.log(a); // Output: 10
+
+  a %= b; // Equivalent to a = a % b;
+  console.log(a); // Output: 0
+  ```
+
+  In this example, the `+=`, `-=`, `*=`, `/=`, and `%=` operators are used to assign values to the `a` variable using addition, subtraction, multiplication, division, and modulus operations, respectively.
+
+- **Comparison operators**: Comparison operators are used to compare two values and return a Boolean value of `true` or `false`. For example:
+
+  ```javascript
+  let a = 10;
+  let b = 5;
+
+  console.log(a > b); // Output: true
+  console.log(a >= b); // Output: true
+  console.log(a < b); // Output: false
+  console.log(a <= b); // Output: false
+  console.log(a === b); // Output: false
+  console.log(a !== b); // Output: true
+  ```
+
+  In this example, the `>`, `>=`, `<`, `<=`, `===`, and `!==` operators are used to compare the `a` and `b` variables and return `true` or `false` based on the comparison result.
+
+- **Logical operators**: Logical operators are used to combine or invert Boolean values. For example:
+
+  ```javascript
+  let a = true;
+  let b = false;
+
+  console.log(a && b); // Output: false
+  console.log(a || b); // Output: true
+  console.log(!a); // Output: false
+  console.log(!b); // Output: true
+  ```
+
+  In this example, the `&&`, `||`, and `!` operators are used to perform logical AND, logical OR, and logical NOT operations on the `a` and `b` Boolean values.
+
+- **Bitwise operators**: Bitwise operators are used to perform operations on the binary representation of numbers. For example:
+
+  ```javascript
+  let a = 5; // Binary representation: 101
+  let b = 3; // Binary representation: 011
+
+  console.log(a & b); // Output: 1 (Binary representation: 001)
+  console.log(a | b); // Output: 7 (Binary representation: 111)
+  console.log(a ^ b); // Output: 6 (Binary representation: 110)
+  console.log(~a); // Output: -6 (Binary representation: 111...110)
+  console.log(a << 1); // Output: 10 (Binary representation: 1010)
+  console.log(a >> 1); // Output: 2 (Binary representation: 010)
+  console.log(a >>> 1); // Output: 2 (Binary representation: 010)
+  ```
+
+  In this example, the `&`, `|`, `^`, `~`, `<<`, `>>`, and `>>>` operators are used to perform bitwise AND, bitwise OR, bitwise XOR, bitwise NOT, left shift, right shift, and unsigned right shift operations on the `a` and `b` values.
+
+- **Conditional (ternary) operator**: The conditional operator is a shorthand version of an if-else statement. It is often used to assign a value to a variable based on a condition. For example:
+
+  ```javascript
+  let a = 10;
+  let b = 5;
+
+  let result = a > b ? "a is greater than b" : "b is greater than or equal to a";
+  console.log(result); // Output: "a is greater than b"
+  ```
+
+  In this example, the conditional operator `? :` is used to check if the value of `a` is greater than the value of `b`. If it is, the string `"a is greater than b"` is assigned to the `result` variable. Otherwise, the string `"b is greater than or equal to a"` is assigned to the `result` variable.
+
+- **Comma operator**: The comma operator is used to evaluate two or more expressions and return the result of the last expression. For example:
+
+  ```javascript
+  let a = 10, b = 5;
+
+  let result = (a += b, a - b);
+  console.log(result); // Output: 10
+  console.log(a); // Output: 15
+  console.log(b); // Output: 5
+  ```
+
+  In this example, the comma operator is used to first assign the value of `a + b` to the `a` variable, and then subtract the value of `b` from the `a` variable. The final result of the expression `(a += b, a - b)` is the value of `a - b`, which is `10`.
+
+JavaScript also has a few other operators, such as the `typeof` operator (used to check the type of a value or variable), the `delete` operator (used to delete a property from an object), and the `in` operator (used to check if a property exists in an object).
+
+### Template Literal
+
+- **Template literals**: Template literals are a new way to define strings in JavaScript. They allow you to embed expressions inside string literals, making it easier to build dynamic strings. To define a template literal, you enclose the string in backticks (`` ` ``) instead of quotes.
+
+  For example:
+
+  ```javascript
+  let name = "John";
+  let greeting = `Hello, ${name}!`;
+
+  console.log(greeting); // Output: "Hello, John!"
+  ```
+
+  In this example, the `name` variable is embedded inside the `greeting` string using `${...}`. When the `console.log()` function is called, the value of `greeting` is printed to the console, with the value of `name` inserted in the appropriate location.
+
+  You can also use template literals to create multi-line strings without using escape characters:
+
+  ```javascript
+  let multiLine = `This is
+  a multi-line
+  string.`;
+
+  console.log(multiLine); // Output: "This is\na multi-line\nstring."
+  ```
+
+  In this example, the `multiLine` variable is assigned a multi-line string using backticks. The resulting string includes line breaks, which are automatically included in the final output when the string is printed to the console.
+
+### Conditionals
+
+- **Conditionals**: Conditionals are used to execute different code depending on whether a condition is true or false. In JavaScript, there are two types of conditionals: `if` statements and `switch` statements.
+
+  - **`if` statements**: `if` statements are used to execute code if a condition is true. They have the following syntax:
+
+    ```javascript
+    if (condition) {
+      // code to execute if condition is true
+    } else {
+      // code to execute if condition is false
+    }
+    ```
+
+    For example:
+
+    ```javascript
+    let x = 5;
+
+    if (x > 0) {
+      console.log("x is positive");
+    } else if (x < 0) {
+      console.log("x is negative");
+    } else {
+      console.log("x is zero");
+    }
+    ```
+
+    In this example, the `if` statement tests whether the value of `x` is greater than 0, and prints a message to the console depending on the result.
+
+  - **`switch` statements**: `switch` statements are used to execute different code depending on the value of a variable or expression. They have the following syntax:
+
+    ```javascript
+    switch (expression) {
+      case value1:
+        // code to execute if expression === value1
+        break;
+      case value2:
+        // code to execute if expression === value2
+        break;
+      // more cases...
+      default:
+        // code to execute if expression doesn't match any case
+    }
+    ```
+
+    For example:
+
+    ```javascript
+    let day = "Monday";
+
+    switch (day) {
+      case "Monday":
+        console.log("It's Monday");
+        break;
+      case "Tuesday":
+        console.log("It's Tuesday");
+        break;
+      // more cases...
+      default:
+        console.log("It's another day");
+    }
+    ```
+
+    In this example, the `switch` statement tests the value of the `day` variable and prints a message to the console depending on the result. If the value of `day` doesn't match any of the cases, the default case is executed.
+
+### Functions
+
+- **Functions**: Functions are blocks of code that can be called multiple times with different input parameters. They are defined using the `function` keyword, followed by a name for the function, a list of input parameters (also known as arguments), and the code block that makes up the body of the function.
+
+  For example:
+
+  ```javascript
+  function add(a, b) {
+    return a + b;
+  }
+
+  let sum = add(2, 3);
+  console.log(sum); // Output: 5
+  ```
+
+  In this example, the `add()` function takes two arguments `a` and `b`, and returns their sum.
+
+- **Fat arrow functions**: Fat arrow functions (also known as arrow functions) are a shorthand way of defining functions in JavaScript. They use the `=>` operator instead of the `function` keyword, and don't require a separate `return` statement when returning a value.
+
+  For example:
+
+  ```javascript
+  let multiply = (a, b) => a * b;
+
+  let product = multiply(2, 3);
+  console.log(product); // Output: 6
+  ```
+
+  In this example, the `multiply` variable is assigned an arrow function that takes two arguments `a` and `b`, and returns their product. Since the function body is a single expression, it is implicitly returned without the need for a `return` statement.
+
+  Arrow functions also have some other features, such as implicit binding of `this` and support for concise syntax for certain function bodies. Here is an example of an arrow function with concise syntax:
+
+  ```javascript
+  let numbers = [1, 2, 3, 4, 5];
+
+  let squared = numbers.map(n => n * n);
+
+  console.log(squared); // Output: [1, 4, 9, 16, 25]
+  ```
+
+  In this example, the `map()` method is used to transform an array of numbers by squaring each number. The callback function passed to `map()` is an arrow function with concise syntax, which takes a single argument `n` and returns its square.
+
+### Loops
+
+- **Loops**: Loops are used to execute a block of code repeatedly. In JavaScript, there are three types of loops: `for` loops, `while` loops, and `do-while` loops.
+
+  - **`for` loops**: `for` loops are used to execute a block of code a specific number of times. They have the following syntax:
+
+    ```javascript
+    for (initialization; condition; increment/decrement) {
+      // code to execute
+    }
+    ```
+
+    For example:
+
+    ```javascript
+    for (let i = 0; i < 5; i++) {
+      console.log(i);
+    }
+    ```
+
+    In this example, the `for` loop executes the code block 5 times, with `i` taking on the values from 0 to 4.
+
+  - **`while` loops**: `while` loops are used to execute a block of code while a condition is true. They have the following syntax:
+
+    ```javascript
+    while (condition) {
+      // code to execute
+    }
+    ```
+
+    For example:
+
+    ```javascript
+    let i = 0;
+
+    while (i < 5) {
+      console.log(i);
+      i++;
+    }
+    ```
+
+    In this example, the `while` loop executes the code block as long as `i` is less than 5, with `i` taking on the values from 0 to 4.
+
+  - **`do-while` loops**: `do-while` loops are similar to `while` loops, but they execute the code block at least once, even if the condition is false. They have the following syntax:
+
+    ```javascript
+    do {
+      // code to execute
+    } while (condition);
+    ```
+
+    For example:
+
+    ```javascript
+    let i = 0;
+
+    do {
+      console.log(i);
+      i++;
+    } while (i < 5);
+    ```
+
+    In this example, the `do-while` loop executes the code block at least once, and then continues to execute it as long as `i` is less than 5.
+
+### Error Handling
+
+- **`try`-`catch`**: `try`-`catch` statements are used for error handling in JavaScript. The `try` block contains the code that might throw an exception, and the `catch` block contains the code that handles the exception if one is thrown.
+
+  - **`try` block**: The `try` block contains the code that might throw an exception. It has the following syntax:
+
+    ```javascript
+    try {
+      // code that might throw an exception
+    } catch (error) {
+      // code to handle the exception
+    }
+    ```
+
+    For example:
+
+    ```javascript
+    try {
+      const result = 10 / 0;
+      console.log(result);
+    } catch (error) {
+      console.log(`An error occurred: ${error}`);
+    }
+    ```
+
+    In this example, the `try` block attempts to divide 10 by 0, which is not allowed in JavaScript and will throw an exception. The `catch` block catches the exception and logs an error message to the console.
+
+  - **`catch` block**: The `catch` block contains the code that handles the exception if one is thrown. It has the following syntax:
+
+    ```javascript
+    catch (error) {
+      // code to handle the exception
+    }
+    ```
+
+    The `error` parameter contains information about the exception that was thrown, including the name of the exception and a message describing the error.
+
+  - **`finally` block**: Optionally, you can include a `finally` block that will execute regardless of whether an exception was thrown or not. The `finally` block has the following syntax:
+
+    ```javascript
+    finally {
+      // code to execute
+    }
+    ```
+
+    For example:
+
+    ```javascript
+    try {
+      const result = 10 / 0;
+      console.log(result);
+    } catch (error) {
+      console.log(`An error occurred: ${error}`);
+    } finally {
+      console.log("This code always runs");
+    }
+    ```
+
+    In this example, the `finally` block logs a message to the console after the `try`-`catch` block has finished executing, regardless of whether an exception was thrown or not.
+
+### DOM
+
+- Document Object Model (DOM): The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. Essentially, it is an API that allows JavaScript to interact with HTML and CSS.
+
+- **What is the DOM?**: The DOM is a tree-like structure that represents the elements and content of an HTML or XML document. Each element in the document is represented by a node in the tree, and nodes can have child nodes and/or parent nodes. The topmost node in the tree is the document node, which represents the entire HTML or XML document.
+
+- **How to access the DOM**: In JavaScript, the DOM can be accessed through the global `document` object, which represents the current web page as a `document` object. The `document` object has many methods and properties that can be used to manipulate the DOM, such as `getElementById()`, `querySelector()`, `createElement()`, `appendChild()`, and many more.
+
+- **Manipulating the DOM**: Once you have accessed an element in the DOM, you can manipulate it using its properties and methods. For example, you can change the text content of an element by setting its `textContent` property, or you can add a new element to the DOM using the `createElement()` and `appendChild()` methods.
+
+- **Events and the DOM**: In addition to manipulating the DOM, you can also listen for events that occur on elements in the DOM, such as clicks, mouse movements, and key presses. To do this, you can use the `addEventListener()` method, which allows you to specify a function to be called when the event occurs.
+
+- **Browser compatibility**: It's important to note that different web browsers may have different implementations of the DOM, which can lead to inconsistencies in how JavaScript interacts with the DOM. To ensure cross-browser compatibility, it's a good idea to test your code in multiple web browsers and to use libraries like jQuery that provide a consistent API for interacting with the DOM.
+
+### Accessing elements in DOM
+
+- `getElementById`: This method returns the element that has the specified ID. It has the following syntax:
+
+  ```javascript
+  document.getElementById(id)
+  ```
+
+  For example:
+
+  ```javascript
+  const element = document.getElementById("myElement");
+  ```
+
+- `getElementsByClassName`: This method returns a collection of elements that have the specified class name. It has the following syntax:
+
+  ```javascript
+  document.getElementsByClassName(className)
+  ```
+
+  For example:
+
+  ```javascript
+  const elements = document.getElementsByClassName("myClass");
+  ```
+
+- `getElementsByTagName`: This method returns a collection of elements that have the specified tag name. It has the following syntax:
+
+  ```javascript
+  document.getElementsByTagName(tagName)
+  ```
+
+  For example:
+
+  ```javascript
+  const elements = document.getElementsByTagName("div");
+  ```
+
+- `getElementsByName`: This method returns a collection of elements that have the specified name attribute. It has the following syntax:
+
+  ```javascript
+  document.getElementsByName(name)
+  ```
+
+  For example:
+
+  ```javascript
+  const elements = document.getElementsByName("myName");
+  ```
+
+- `querySelector`: This method returns the first element that matches a specified CSS selector. It has the following syntax:
+
+  ```javascript
+  document.querySelector(selector)
+  ```
+
+  For example:
+
+  ```javascript
+  const element = document.querySelector("#myId .myClass");
+  ```
+
+- `querySelectorAll`: This method returns a collection of elements that match a specified CSS selector. It has the following syntax:
+
+  ```javascript
+  document.querySelectorAll(selector)
+  ```
+
+  For example:
+
+  ```javascript
+  const elements = document.querySelectorAll(".myClass");
+  ```
+
+These methods are used to retrieve elements from the HTML document so that you can interact with them through JavaScript. Each method has its own syntax and usage, depending on the criteria you want to use to select the elements.
+
+### HTML on attribute
+
+The `on` attribute in HTML is used to attach an event handler directly to an HTML element. It specifies the name of the event to listen for and the JavaScript code to execute when the event is triggered. For example, you can use the `onmouseover` attribute to listen for the mouseover event on an element and execute some JavaScript code when the event occurs.
+
+Here's an example:
+
+```html
+<button onclick="alert('Button clicked!')">Click me</button>
+```
+
+In this example, the `onclick` attribute is used to add a click event handler to a button element. When the button is clicked, the JavaScript code `alert('Button clicked!')` is executed.
+
+While the `on` attribute can be a quick and easy way to add interactivity to a web page, it has some limitations. One limitation is that you can only attach one event handler per `on` attribute. If you need to attach multiple event handlers to an element, you'll need to use the `addEventListener()` method in JavaScript instead.
+
+Here's an example of using `addEventListener()` to attach a click event handler to a button element:
+
+```html
+<button id="myButton">Click me</button>
+
+<script>
+const button = document.getElementById('myButton');
+button.addEventListener('click', () => {
+  alert('Button clicked!');
+});
+</script>
+```
+
+In this example, the `addEventListener()` method is used to add a click event handler to the button element with the ID `myButton`. When the button is clicked, the function passed as the second argument to `addEventListener()` is executed. In this case, the function simply shows an alert box with the message "Button clicked!".
+
+Using `addEventListener()` instead of the `on` attribute provides more flexibility and separation of concerns. You can keep your HTML code clean and free of JavaScript code, which can make it easier to maintain and update your web pages. Additionally, you can attach multiple event handlers to an element and remove them if needed.
+
+Overall, the `on` attribute in HTML is a simple way to add interactivity to web pages, but for more complex interactions and better separation of concerns, it's best to use JavaScript and the `addEventListener()` method instead.
+
+### Event Listeners
+
+Event listeners are functions that are executed in response to a specific event occurring on an HTML element. They are used to add interactivity to web pages, such as responding to button clicks or keyboard inputs. In JavaScript, you can add an event listener to an element using the `addEventListener()` method.
+
+The `addEventListener()` method takes two parameters: the type of event to listen for, and the function to execute when the event is triggered. Here's an example that adds an event listener to a button element:
+
+```javascript
+const button = document.querySelector('button');
+button.addEventListener('click', () => {
+  console.log('Button clicked!');
+});
+```
+
+In this example, the `addEventListener()` method is used to add a click event listener to a button element. When the button is clicked, the function passed as the second parameter to `addEventListener()` is executed. In this case, the function simply logs a message to the console.
+
+Here are a few more examples of event listeners:
+
+- **Mouseover event listener**
+
+  This event is triggered when the mouse pointer enters the area over an element.
+
+  ```javascript
+  const element = document.querySelector('.my-element');
+  element.addEventListener('mouseover', () => {
+    console.log('Mouse over!');
+  });
+  ```
+
+- **Keydown event listener**
+
+  This event is triggered when a key on the keyboard is pressed.
+
+  ```javascript
+  const input = document.querySelector('.my-input');
+  input.addEventListener('keydown', () => {
+    console.log('Key down!');
+  });
+  ```
+
+- **Submit event listener**
+
+  This event is triggered when a form is submitted.
+
+  ```javascript
+  const form = document.querySelector('.my-form');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('Form submitted!');
+  });
+  ```
+
+In this last example, the `preventDefault()` method is used to prevent the form from being submitted in the usual way. Instead, the function passed to `addEventListener()` logs a message to the console.
 
 ### 2.5 Data Validation
 
-content here
+## Data Validation in Web Applications
+
+Data validation is the process of ensuring that the data entered by the user is valid and meets the requirements of the application. This is a crucial step in web development as it helps to prevent errors and security vulnerabilities.
+
+There are several ways to perform data validation in web applications, including:
+
+1. Client-side validation: This involves validating the data on the client-side using JavaScript before it is submitted to the server. This can provide immediate feedback to the user if they have entered invalid data, and can help to reduce the number of requests sent to the server.
+
+2. Server-side validation: This involves validating the data on the server-side after it has been submitted by the user. This is important as it provides an additional layer of security and ensures that the data is validated even if the client-side validation fails or is bypassed.
+
+3. Database validation: This involves validating the data at the database level, either through constraints or triggers. This can help to ensure that the data is consistent and valid across all parts of the application.
+
+It is important to use a combination of these validation techniques to ensure that the data is as secure and valid as possible. Additionally, it is important to provide clear feedback to the user when invalid data is entered, so that they can correct the issue and resubmit the form.
+
+Here's an example of client-side validation using JavaScript to ensure that a form field is not empty:
+
+```javascript
+const form = document.querySelector('form');
+const input = document.querySelector('input');
+const error = document.querySelector('.error');
+
+form.addEventListener('submit', (event) => {
+  if (input.value.trim() === '') {
+    event.preventDefault();
+    error.textContent = 'Please enter a value';
+  }
+});
+```
+
+In this example, we select the form, input field, and error element using the `document.querySelector()` method. We then add an event listener to the form's `submit` event, and check if the input value is empty using the `trim()` method to remove any leading or trailing whitespace. If the input value is empty, we prevent the form from submitting using the `preventDefault()` method, and display an error message to the user.
+  
+Here's an example of server-side validation using node.js to ensure that a data is present:
+
+```javascript
+app.post('/submit-form', (req, res) => {
+  const { name, email } = req.body;
+  if (!name || !email) {
+    return res.status(400).send('Name and email are required');
+  }
+  // Process the data
+  // ...
+  return res.status(200).send('Data submitted successfully');
+});
+```
+
+In the example above, the server checks if the `name` and `email` fields are present in the submitted data. If they are not present, it returns a `400 Bad Request` status code with an error message.
+
+Here's an example of database constraints
+
+```sql
+CREATE TABLE users (
+  id INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE
+);
+```
+
+In the example above, the `NOT NULL` constraint ensures that both the `name` and `email` fields are required, while the `UNIQUE` constraint ensures that no two users can have the same email address.
+
+By using a combination of these techniques, web developers can ensure that the user input is validated and meets the expected format before it is processed by the application.
 
 ## 3. Responsive Web Design
 
-content here
+Responsive web design is an approach to web development that ensures that websites look great and function well on any device, regardless of its size or screen resolution.
+
+The idea behind responsive web design is that instead of creating separate versions of a website for each device, developers create a single website that can adapt and adjust its layout and content according to the screen size of the device it's being viewed on.
+
+Responsive design typically involves the use of flexible grid layouts, flexible images and media, and CSS media queries. A flexible grid layout ensures that website content can be easily rearranged and resized to fit different screen sizes. Flexible images and media ensure that images and videos can be scaled down to fit smaller screens without losing their quality. CSS media queries are used to apply different styles and rules to a website based on the screen size and device being used to view it.
+
+By using responsive web design, developers can ensure that their websites are accessible and usable on any device, which can greatly improve the user experience and increase engagement and conversions. Additionally, responsive design can also benefit search engine optimization (SEO), as it makes it easier for search engines to crawl and index a website's content across different devices and screen sizes.
+
+Here's an example of a simple responsive web design using HTML and CSS:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Web Design Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Desktop styles */
+    .container {
+      width: 960px;
+      margin: 0 auto;
+    }
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: #ccc;
+      float: left;
+      margin: 10px;
+    }
+
+    /* Tablet styles */
+    @media (max-width: 768px) {
+      .container {
+        width: 100%;
+      }
+      .box {
+        width: 48%;
+        margin: 1%;
+      }
+    }
+
+    /* Mobile styles */
+    @media (max-width: 480px) {
+      .box {
+        width: 100%;
+        margin: 2% 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>
+```
+
+In the example above, the CSS media queries are used to apply different styles based on the screen size. The `max-width` values for the media queries specify the maximum screen width at which the styles should be applied.
+
+The desktop styles are defined outside of any media queries, and apply by default. The tablet styles are defined within a media query that applies when the screen width is less than or equal to 768px. The mobile styles are defined within a media query that applies when the screen width is less than or equal to 480px.
+
+This approach allows the layout and styles of the website to adjust and optimize for different screen sizes and device types, providing a better user experience for all visitors.
 
 ## 4. Libraries
+
+JavaScript libraries are collections of pre-written code that developers can use to simplify and speed up the process of building web applications. They typically provide a set of functions and methods that can be called from within a JavaScript program to perform common tasks such as working with the DOM, handling events, and making AJAX requests.
+
+Using a JavaScript library can be a huge time saver, as it allows developers to avoid writing a lot of boilerplate code and focus on the specific functionality that they need to implement. Some popular JavaScript libraries include jQuery, Bootstrap etc.
+
+### JQuery
+
+jQuery is a popular JavaScript library that provides a wide range of functions and utilities for working with the DOM, handling events, making AJAX requests, and more. It's designed to simplify the process of writing JavaScript code and provide a consistent, cross-browser-compatible API.
+
+One of the key features of jQuery is its ability to select and manipulate elements in the DOM. Here's an example of how you might use jQuery to select an element by its ID and change its text content:
+
+```javascript
+// Select an element by its ID and change its text content
+$('#my-element').text('Hello, world!');
+```
+
+In this code, the `$` function provided by jQuery is used to select an element with the ID "my-element". The `text` method is then called on that element to change its text content to "Hello, world!".
+
+jQuery also provides a range of event handling functions that make it easy to attach event listeners to DOM elements. Here's an example of how you might use jQuery to attach a click event listener to a button element:
+
+```javascript
+// Attach a click event listener to a button element
+$('#my-button').click(function() {
+  alert('Button clicked!');
+});
+```
+
+In this code, the `$` function is used to select a button element with the ID "my-button". The `click` method is then called on that element to attach a click event listener. When the button is clicked, the function passed as an argument to `click` will be executed, in this case displaying an alert with the message "Button clicked!".
+
+jQuery also makes it easy to make AJAX requests and handle the responses using its `$.ajax` function. Here's an example of how you might use `$.ajax` to make a GET request and handle the response:
+
+```javascript
+// Make a GET request to an API and handle the response
+$.ajax({
+  url: 'https://api.example.com/data',
+  method: 'GET',
+  success: function(response) {
+    console.log('Data received:', response);
+  },
+  error: function(xhr, status, error) {
+    console.error('Error:', error);
+  }
+});
+```
+
+In this code, the `$.ajax` function is used to make a GET request to an API endpoint. The `url` and `method` options are used to specify the URL and HTTP method for the request, respectively. The `success` option is used to specify a function to be called when the request is successful, and the `error` option is used to specify a function to be called when there's an error. In this case, the success function logs the response data to the console, and the error function logs any errors that occur.
+
+These are just a few examples of the many things that can be done with jQuery. By providing a consistent and easy-to-use API, jQuery can simplify and speed up the process of building complex web applications.
+
+### Bootstrap
+
+Bootstrap is a popular CSS framework that makes it easy to create responsive and mobile-first websites. It includes a variety of CSS and JavaScript components, such as forms, buttons, navigation, and more. Here's an example of how to use Bootstrap to create a simple webpage:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Bootstrap Page</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to my Bootstrap page!</h1>
+    <p>This is some text using Bootstrap styles.</p>
+    <button class="btn btn-primary">Click me!</button>
+  </div>
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-REt0zv7QIg/M12YUMtVY0jLf5FJc5C5j5ywhbMYy95/DqokPbWAFmz5xsURBDll+" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+```
+
+In this example, we're including the Bootstrap CSS and JS files from a CDN, and then using Bootstrap classes to style our HTML elements. We're also using Bootstrap's JavaScript components, such as the button component.
+
+Bootstrap is a powerful tool that can help you create professional-looking websites quickly and easily. However, it's important to note that using a framework like Bootstrap does come with some trade-offs, such as potentially larger file sizes and less flexibility in design.
 
 ## 5. Web Architecture
 
@@ -1114,16 +2066,16 @@ They provide a flexible and scalable way to transfer data between applications, 
 
 There are many but lets take a brief look at a few:
 
-1. __Nodejs__:
+1. **Nodejs**:
 NodeJs is a backend programming language that is based on JavaScript. It's used for creating web applications and server-side code. NodeJs is known for its fast performance, scalability, and non-blocking I/O operations. It's commonly used for creating real-time applications, such as chat applications, gaming platforms, and social media platforms.
 
-2. __Python__:
+2. **Python**:
 Python is a versatile programming language that is used for web development, scientific computing, data analysis, and machine learning. Python has a simple syntax and a large standard library, making it easy to learn and use. It's commonly used for backend web development, data processing, and automation tasks. Python is also popular in the machine learning and data science fields.
 
-3. __Java__:
+3. **Java**:
 Java is a popular programming language that is used for developing enterprise-level applications, including web applications and mobile applications. Java is known for its portability, security, and scalability. It's commonly used for backend web development, financial applications, and large-scale enterprise applications. Java is also popular in the Android mobile app development field.
 
-4. __PHP__:
+4. **PHP**:
 PHP is a scripting language that is used for creating dynamic web pages and server-side code. It's commonly used for backend web development, content management systems, and e-commerce platforms. PHP has a large community and many frameworks and libraries, making it easy to learn and use. However, PHP has been criticized for its security issues and inconsistencies in its syntax.
 
 Here is a tabular comparison of the above languages
@@ -1181,7 +2133,255 @@ There are many other factors that involve when you choose a backend technology l
 
 ## 8. Database
 
+## What are databases?
+
+A database is a collection of data that is organized in a way that allows for efficient storage, retrieval, and manipulation of that data. Databases can be as simple as a flat file, or as complex as a distributed, multi-node system that spans multiple data centers.
+
+In the context of web development, databases are often used to store and retrieve information for web applications. For example, a database might store information about users, their preferences, and their interactions with the application.
+
+### Types of databases
+
+There are several different types of databases, each with their own strengths and weaknesses. Some of the most common types of databases include:
+
+- **Relational databases**: These are databases that store data in tables with predefined columns and relationships between them. They are often used for transactional data (e.g. financial transactions) and are typically accessed using the SQL language.
+
+- **NoSQL databases**: These are databases that do not use a predefined schema and can store data in a variety of formats, such as key-value pairs or JSON documents. They are often used for non-transactional data (e.g. social media posts) and are typically accessed using APIs.
+
+- **Graph databases**: These are databases that store data in nodes and edges, and are optimized for storing and querying complex relationships. They are often used for social networks and recommendation systems.
+
+### Popular database management systems
+
+There are many different database management systems (DBMS) available, each with their own features and benefits. Some of the most popular DBMS include:
+
+- **MySQL**: This is an open-source relational database management system that is widely used in web development.
+
+- **PostgreSQL**: This is another open-source relational database management system that is known for its reliability and extensibility.
+
+- **MongoDB**: This is a popular open-source NoSQL database that stores data in JSON-like documents.
+
+- **Redis**: This is an in-memory data store that is often used for caching and session management.
+
+Here is an example of a simple SQL query that retrieves all of the users in a hypothetical database:
+
+```sql
+SELECT * FROM users;
+```
+
+This query would return all of the users in the "users" table of the database.
+
+Databases are an essential part of web development, as they allow web applications to store and manage large amounts of data. There are various types of databases, but the most commonly used ones in web development are relational databases like MySQL, PostgreSQL, and SQLite, and NoSQL databases like MongoDB and Firebase.
+
+### Relational Databases
+
+Relational databases use tables to store data. A table is a collection of rows and columns, and each row represents a single record or instance of a particular entity, while each column represents an attribute or property of that entity. The relationships between different tables are established using foreign keys, which link the tables together.
+
+Here's an example of creating a table in MySQL:
+
+```sql
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+```
+
+In this example, we've created a table called `users` with columns for `id`, `name`, `email`, and `password`. The `id` column is set to auto-increment, which means that a new value will be assigned automatically for each new row added to the table.
+
+### NoSQL Databases
+
+NoSQL databases use a variety of data models, including document-based models, key-value models, and graph models, to store data. They are designed to be highly scalable and flexible, making them well-suited for web applications that need to handle large amounts of unstructured data.
+
+Here's an example of using MongoDB to store a document:
+
+```javascript
+const { MongoClient } = require('mongodb');
+
+const uri = 'mongodb+srv://<username>:<password>@<cluster>.mongodb.net/test?retryWrites=true&w=majority';
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+async function createListing() {
+  try {
+    await client.connect();
+    const database = client.db('sample_airbnb');
+    const listings = database.collection('listingsAndReviews');
+    const result = await listings.insertOne({
+      name: "Lovely Loft",
+      summary: "A charming loft in Paris",
+      bedrooms: 1,
+      bathrooms: 1,
+      price: 80,
+      property_type: "Apartment",
+      amenities: [ "WiFi", "Kitchen", "Heating" ]
+    });
+    console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`);
+  } finally {
+    await client.close();
+  }
+}
+
+createListing().catch(console.dir);
+```
+
+In this example, we've used MongoDB to store a document representing a listing for an Airbnb-style rental property. The document is structured as a JavaScript object, with properties for `name`, `summary`, `bedrooms`, `bathrooms`, `price`, `property_type`, and `amenities`. We use the `MongoClient` object to connect to the MongoDB database, then use the `insertOne` method to add the document to the `listingsAndReviews` collection.
+
+### Object-Relational Mapping (ORM)
+
+ORM stands for Object-Relational Mapping. It is a technique that allows developers to map object-oriented programming languages to relational databases. ORM frameworks enable developers to interact with databases using object-oriented paradigms and avoid the need to write SQL code directly.
+
+Some popular ORM frameworks for JavaScript include Sequelize, TypeORM, and Mongoose (for MongoDB).
+
+Here is an example of using Sequelize, a popular ORM for Node.js:
+
+```javascript
+const Sequelize = require('sequelize');
+
+// initialize sequelize with database credentials
+const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: 'mysql',
+});
+
+// define a model
+const User = sequelize.define('user', {
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
+
+// synchronize the model with the database
+sequelize.sync();
+
+// create a new user
+User.create({
+  firstName: 'John',
+  lastName: 'Doe',
+  email: 'john.doe@example.com',
+  password: 'password',
+}).then((user) => {
+  console.log(user.toJSON());
+}).catch((error) => {
+  console.error(error);
+});
+```
+
+In this example, we first initialize Sequelize with our database credentials. Then, we define a `User` model with several properties. We then synchronize the model with the database and create a new user using the `create` method. Finally, we log the created user to the console.
+
+ORM frameworks can save developers a lot of time and effort, as they provide high-level abstractions that simplify database interactions. They also make it easier to maintain and modify database schemas as the application evolves.
+
 ## 9. Authentication and Authorization
+
+Authentication and authorization are two crucial concepts in web development that deal with the security of a web application.
+
+Authentication refers to the process of verifying the identity of a user. This is typically done by having the user provide some form of credentials, such as a username and password. The server then checks these credentials against a database of authorized users to determine whether the user is who they claim to be. If the user is authenticated, they are granted access to the application.
+
+Authorization, on the other hand, is the process of determining whether an authenticated user has permission to access a specific resource or perform a specific action within the application. For example, a user may be authenticated, but they may not have permission to delete a record from the database. Authorization rules are typically defined by the application's administrator and enforced by the server.
+
+In web development, authentication and authorization are typically implemented using a combination of server-side and client-side technologies. Common authentication methods include username and password, OAuth, and multi-factor authentication. Authorization can be implemented using access control lists (ACLs), role-based access control (RBAC), or other mechanisms.
+
+Some common tools and libraries used for implementing authentication and authorization in web applications include:
+
+- Passport.js: A popular authentication library for Node.js that supports a wide range of authentication methods, including OAuth, JWT, and more.
+- JSON Web Tokens (JWT): A standard for securely transmitting information between parties as a JSON object. JWTs can be used for authentication and authorization.
+- bcrypt: A library for hashing passwords, which is a common method for securely storing user passwords in a database.
+- Role-based access control (RBAC): A method of enforcing authorization rules based on the role of the user. For example, a user with an "admin" role may have permission to perform certain actions that a regular user does not.
+- OAuth: An authentication protocol that allows users to authenticate with third-party applications without sharing their password.
+
+```javascript
+// Authentication example using bcrypt
+
+const bcrypt = require('bcrypt');
+
+// simulate user data
+const users = [
+  {
+    username: 'user1',
+    password: '$2b$10$C7wZ/yojKTHKyEDgYiy6seFOeHkPY/w0iK9N22Aehd8Q2w1ZVyld2', // hashed password for "password1"
+    role: 'user',
+  },
+  {
+    username: 'admin1',
+    password: '$2b$10$3YrYY8V7Dx0yJG2OeOxtfOkEbhRbiMzSQZwo7VdfqgYJbz7Vx34I2', // hashed password for "password1"
+    role: 'admin',
+  },
+];
+
+// authenticate user
+function authenticate(username, password) {
+  const user = users.find((u) => u.username === username);
+  if (!user) return false; // user not found
+  const match = bcrypt.compareSync(password, user.password);
+  if (!match) return false; // password does not match
+  return user;
+}
+```
+
+```javascript
+// Authorization example using role-based access control (RBAC)
+
+// simulate user data
+const users = [
+  {
+    username: 'user1',
+    password: 'password1',
+    role: 'user',
+  },
+  {
+    username: 'admin1',
+    password: 'password1',
+    role: 'admin',
+  },
+];
+
+// simulate resource data
+const resources = [
+  {
+    id: 1,
+    name: 'resource1',
+    owner: 'user1',
+  },
+  {
+    id: 2,
+    name: 'resource2',
+    owner: 'admin1',
+  },
+];
+
+// authorize user
+function authorize(user, resource) {
+  if (user.role === 'admin') return true; // admin has access to all resources
+  if (user.username === resource.owner) return true; // owner has access to their own resource
+  return false; // user does not have access
+}
+
+// usage example
+const user = authenticate('user1', 'password1');
+if (user) {
+  const resource = resources[0]; // assume we are trying to access the first resource
+  if (authorize(user, resource)) {
+    console.log('User has access to the resource!');
+  } else {
+    console.log('User does not have access to the resource.');
+  }
+} else {
+  console.log('Authentication failed.');
+}
+```
 
 ## 10. Git and Github
 
@@ -1216,7 +2416,7 @@ Not really,
 
 Git does not immediately start tracking every file and folder you give it. It will initially not track any files. git considers your files in an untracked state.
 
-You will need to tell git what files to track using __add__ command
+You will need to tell git what files to track using **add** command
 
 ### How to add files in Git
 
@@ -1227,7 +2427,7 @@ git add <filename>
 ```
 
 After this git will add the file with the file name you provide it
-If you want to add a file named __about.txt__, you will use
+If you want to add a file named **about.txt**, you will use
 
 ```bash
 git add about.txt
@@ -1249,7 +2449,7 @@ git status
 
 It will tell you status of your files
 
-This will put your files from __untracked__ to __staged__ state. '.' (dot) is short form for current directory.
+This will put your files from **untracked** to **staged** state. '.' (dot) is short form for current directory.
 
 *Oh no I accidentally added a file that I didn't mean to, what do I do?*
 git on the rescue, just tell git to reset
@@ -1327,7 +2527,11 @@ Step 1 - Create a GitHub account
 Step 2 - Create a repository on github
 
 To push your current repository to github you will need to authenticate with your github account
-TODO: PUT AUTHENTICATION STEPS
+
+You can follow authentication steps over here:
+<a
+      href="https://docs.github.com/en/get-started/quickstart/set-up-git#setting-up-git"><https://docs.github.com/en/get-started/quickstart/set-up-git#setting-up-git>
+</a>
 
 You have an option to change your default branch name when you are uploading your repository the first time.
 You can do that by
@@ -1336,7 +2540,17 @@ You can do that by
 git branch -M <branch name>
 ```
 
-TODO: PUT GIT REMOTE ADD ORIGIN STEPS AND EXPLANATION
+In Git, "origin" is typically the name of the remote repository where you want to store your local repository changes. When you run the command `git remote add origin <remote repository URL>`, you are telling Git to add a new remote repository with the name "origin".
+
+Let's say you have created a new Git repository on GitHub, and the URL of the repository is `https://github.com/yourusername/your-repo.git`.
+
+To add this remote repository to your local Git repository, you can run the following command:
+
+```bash
+git remote add origin https://github.com/yourusername/your-repo.git
+```
+
+This command tells Git to add a new remote repository with the name "origin" and the URL `https://github.com/yourusername/your-repo.git`. Once you have added the remote repository, you can push your local changes to the remote repository using the `git push` command.
 
 Now make sure you have added and committed your files using git
 Once you are done use the command:
@@ -1383,6 +2597,15 @@ If you have followed up to this point then congratulations, you are good to go.Y
 
 ## 11. Resources
 
+- HTML, CSS, JavaScript
+   1. <https://developer.mozilla.org/en-US/docs/Web>
+   2. <https://www.w3schools.com/>
+   3. <https://web.dev/learn/>
+   4. <https://jquery.com/>
+   5. <https://getbootstrap.com/>
+<br>
+<br>
+
 - Frontend technologies
    1. <https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer>
    2. <https://reactjs.org/tutorial/tutorial.html>
@@ -1390,6 +2613,7 @@ If you have followed up to this point then congratulations, you are good to go.Y
    4. <https://angular.io/quick-start>
 <br>
 <br>
+
 - Backend technologies
    1. <https://restfulapi.net/>
    2. <https://developer.mozilla.org/en-US/docs/Web/HTTP>
@@ -1399,9 +2623,13 @@ If you have followed up to this point then congratulations, you are good to go.Y
    6. <https://nodejs.org/en/docs/guides/getting-started-guide/>
 <br>
 <br>
+
 - Git and Github
    1. <https://www.freecodecamp.org/news/git-and-github-for-beginners/>
    2. <https://www.freecodecamp.org/news/how-to-use-basic-git-and-github-commands/>
    3. <https://www.youtube.com/watch?v=RGOj5yH7evk>
    4. <https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/>
    5. <https://github.com/about>
+
+- Web architecture
+   1. <https://www.w3.org/standards/webarch/>
