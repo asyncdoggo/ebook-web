@@ -323,6 +323,129 @@ The form also contains a submit button that the user can click to submit the for
 
 The example above is just a simple form. In practice, HTML forms can contain many different types of input fields and may be used for a wide variety of purposes.
 
+
+### Types in input tag
+
+1. Text input: `<input type="text">` - This type creates a single-line text input field that allows users to enter text. This is the most common input type used for form fields, such as for a name, email address, or phone number. Here's an example of how to create a text input field:
+
+```html
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" placeholder="Enter your name">
+```
+
+2. Password input: `<input type="password">` - This type creates a text input field that masks the characters entered by the user, so that sensitive information like passwords or PIN numbers are not visible on the screen. Here's an example:
+
+```html
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" placeholder="Enter your password">
+```
+
+3. Checkbox input: `<input type="checkbox">` - This type creates a checkbox that users can select or deselect. Checkboxes are used when there are multiple options to choose from and the user can select one or more of them. Here's an example:
+
+```html
+<label for="fruit">Choose your favorite fruit:</label><br>
+<input type="checkbox" id="apple" name="fruit[]" value="apple">
+<label for="apple">Apple</label><br>
+<input type="checkbox" id="banana" name="fruit[]" value="banana">
+<label for="banana">Banana</label><br>
+<input type="checkbox" id="orange" name="fruit[]" value="orange">
+<label for="orange">Orange</label><br>
+```
+
+4. Radio input: `<input type="radio">` - This type creates a set of radio buttons that allows users to select one option from a group of options. Radio buttons are used when there are multiple options to choose from but the user can select only one. Here's an example:
+
+```html
+<label for="gender">Select your gender:</label><br>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label><br>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label><br>
+<input type="radio" id="other" name="gender" value="other">
+<label for="other">Other</label><br>
+```
+
+5. File input: `<input type="file">` - This type creates a file upload field that allows users to select a file from their computer to be uploaded to the server. Here's an example:
+
+```html
+<label for="file">Upload a file:</label><br>
+<input type="file" id="file" name="file">
+```
+
+6. Submit button: `<input type="submit">` - This type creates a button that, when clicked, submits the form data to the server. Here's an example:
+
+```html
+<input type="submit" value="Submit">
+```
+
+The `value` attribute specifies the text that will be displayed on the button. When the button is clicked, the form data is submitted to the server and the action specified in the `form` element is taken.
+
+7. Button input: `<input type="button">` - This type creates a button that can trigger a JavaScript function or perform some other action when clicked. Unlike the submit button, clicking this button does not submit the form data to the server. Here's an example:
+
+```html
+<input type="button" value="Click me!" onclick="alert('Hello, world!')">
+```
+
+Clicking this button will display an alert box with the message "Hello, world!".
+
+8. Hidden input: `<input type="hidden">` - This type creates a field that is not visible to the user but can be used to pass data between pages or scripts. Hidden fields are often used to store session information or to pass data from one page to the next. Here's an example:
+
+```html
+<input type="hidden" name="session_id" value="1234">
+```
+
+When the form is submitted, the `session_id` field will be sent to the server along with the other form data, but it will not be visible to the user.
+
+9. Range input: `<input type="range">` - This type creates a slider that allows users to select a value from a range of values. Range inputs are used when a user needs to select a value within a specific range, such as a temperature or a volume level. Here's an example:
+
+```html
+<label for="volume">Volume:</label>
+<input type="range" id="volume" name="volume" min="0" max="100" value="50">
+```
+
+This creates a slider with a range from 0 to 100 and a starting value of 50. The `min` and `max` attributes specify the range of values, and the `value` attribute specifies the initial value.
+
+10. Color input: `<input type="color">` - This type creates a color picker that allows users to select a color. Color inputs are used when a user needs to choose a color for an element, such as a background color or text color. Here's an example:
+
+```html
+<label for="color">Choose a color:</label>
+<input type="color" id="color" name="color" value="#ff0000">
+```
+
+This creates a color picker with a starting value of red (#ff0000).
+
+11. Date input: `<input type="date">` - This type creates a field that allows users to select a date. Date inputs are used when a user needs to select a specific date, such as a birthdate or appointment date. Here's an example:
+
+```html
+<label for="birthdate">Select your birthdate:</label>
+<input type="date" id="birthdate" name="birthdate">
+```
+
+This creates a date picker that allows users to select a date.
+
+12. Time input: `<input type="time">` - This type creates a field that allows users to select a time. Time inputs are used when a user needs to select a specific time, such as a meeting time or alarm time. Here's an example:
+
+```html
+<label for="meeting_time">Select the meeting time:</label>
+<input type="time" id="meeting_time" name="meeting_time">
+```
+
+This creates a time picker that allows users to select a time.
+
+13. Email input: `<input type="email">` - This type creates a field that is designed to accept email addresses. Email inputs are used when a user needs to enter their email address, such as in a contact form or registration form. Here's an example:
+
+```html
+<label for="email">Enter your email address:</label>
+<input type="email" id="email" name="email">
+```
+
+This creates a field that is designed to validate email addresses and provide a better user experience for entering email addresses.
+
+
+
+
+
+
+
 ### `<table>` tag
 
 The `<table>` tag is used to create an HTML table.
@@ -1035,71 +1158,6 @@ Coercion is the process of converting a value from one type to another. In JavaS
 
 It's important to be aware of coercion in JavaScript and to use it intentionally and carefully to avoid unexpected behavior and bugs in code.
 
-### Asynchronous Nature of JS
-
-JavaScript is an asynchronous programming language, which means that code can run in the background without blocking other code from executing. This is achieved through the use of callbacks, promises, and async/await.
-
-- **Callbacks**: A callback is a function that is passed as an argument to another function and is executed when the other function completes. Callbacks are commonly used for asynchronous operations, such as fetching data from a server or reading a file. For example:
-
-  ```javascript
-  function fetchData(callback) {
-    setTimeout(() => {
-      callback("Data fetched successfully!");
-    }, 2000);
-  }
-
-  fetchData((data) => {
-    console.log(data); // Output: "Data fetched successfully!"
-  });
-  ```
-
-  In this example, the `fetchData()` function takes a callback function as an argument and simulates fetching data from a server using a `setTimeout()` function. The `fetchData()` function then executes the callback function with the fetched data as an argument.
-
-- **Promises**: A promise is an object that represents the eventual completion or failure of an asynchronous operation and allows you to handle the result as either a success or failure. Promises are commonly used for asynchronous operations, such as fetching data from a server or reading a file. For example:
-
-  ```javascript
-  function fetchData() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("Data fetched successfully!");
-      }, 2000);
-    });
-  }
-
-  fetchData()
-    .then((data) => {
-      console.log(data); // Output: "Data fetched successfully!"
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  ```
-
-  In this example, the `fetchData()` function returns a promise that simulates fetching data from a server using a `setTimeout()` function. The `fetchData()` function then resolves the promise with the fetched data, which can be handled using the `then()` method.
-
-- **Async/await**: Async/await is a way to write asynchronous code that looks and behaves like synchronous code. Async/await is built on top of promises and allows you to write asynchronous code in a more readable and maintainable way. For example:
-
-  ```javascript
-  async function fetchData() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("Data fetched successfully!");
-      }, 2000);
-    });
-  }
-
-  async function logData() {
-    const data = await fetchData();
-    console.log(data); // Output: "Data fetched successfully!"
-  }
-
-  logData();
-  ```
-
-  In this example, the `fetchData()` function returns a promise that simulates fetching data from a server using a `setTimeout()` function. The `logData()` function uses the `await` keyword to wait for the promise to resolve and then logs the fetched data to the console.
-
-JavaScript's asynchronous nature is a powerful feature that allows developers to write complex applications that can handle multiple tasks simultaneously without blocking the main thread. However, it requires careful consideration and understanding of asynchronous programming concepts to avoid errors and unexpected behavior in code.
-
 ### Operators in JS
 
 Operators are used to perform operations on values or variables in JavaScript. There are several types of operators in JavaScript, including arithmetic, assignment, comparison, logical, and bitwise operators.
@@ -1475,6 +1533,75 @@ JavaScript also has a few other operators, such as the `typeof` operator (used t
     ```
 
     In this example, the `finally` block logs a message to the console after the `try`-`catch` block has finished executing, regardless of whether an exception was thrown or not.
+
+
+
+### Asynchronous Nature of JS
+
+JavaScript is an asynchronous programming language, which means that code can run in the background without blocking other code from executing. This is achieved through the use of callbacks, promises, and async/await.
+
+- **Callbacks**: A callback is a function that is passed as an argument to another function and is executed when the other function completes. Callbacks are commonly used for asynchronous operations, such as fetching data from a server or reading a file. For example:
+
+  ```javascript
+  function fetchData(callback) {
+    setTimeout(() => {
+      callback("Data fetched successfully!");
+    }, 2000);
+  }
+
+  fetchData((data) => {
+    console.log(data); // Output: "Data fetched successfully!"
+  });
+  ```
+
+  In this example, the `fetchData()` function takes a callback function as an argument and simulates fetching data from a server using a `setTimeout()` function. The `fetchData()` function then executes the callback function with the fetched data as an argument.
+
+- **Promises**: A promise is an object that represents the eventual completion or failure of an asynchronous operation and allows you to handle the result as either a success or failure. Promises are commonly used for asynchronous operations, such as fetching data from a server or reading a file. For example:
+
+  ```javascript
+  function fetchData() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Data fetched successfully!");
+      }, 2000);
+    });
+  }
+
+  fetchData()
+    .then((data) => {
+      console.log(data); // Output: "Data fetched successfully!"
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  ```
+
+  In this example, the `fetchData()` function returns a promise that simulates fetching data from a server using a `setTimeout()` function. The `fetchData()` function then resolves the promise with the fetched data, which can be handled using the `then()` method.
+
+- **Async/await**: Async/await is a way to write asynchronous code that looks and behaves like synchronous code. Async/await is built on top of promises and allows you to write asynchronous code in a more readable and maintainable way. For example:
+
+  ```javascript
+  async function fetchData() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Data fetched successfully!");
+      }, 2000);
+    });
+  }
+
+  async function logData() {
+    const data = await fetchData();
+    console.log(data); // Output: "Data fetched successfully!"
+  }
+
+  logData();
+  ```
+
+  In this example, the `fetchData()` function returns a promise that simulates fetching data from a server using a `setTimeout()` function. The `logData()` function uses the `await` keyword to wait for the promise to resolve and then logs the fetched data to the console.
+
+JavaScript's asynchronous nature is a powerful feature that allows developers to write complex applications that can handle multiple tasks simultaneously without blocking the main thread. However, it requires careful consideration and understanding of asynchronous programming concepts to avoid errors and unexpected behavior in code.
+
+
 
 ### DOM
 
@@ -1933,7 +2060,7 @@ Lets take a look at these frameworks:
 - It has a strong community support, but smaller than React
 - It uses a hybrid development approach that combines the template syntax with a reactive data-binding system
 
-3. React:
+3. React: (not a framework but it fits here)
 
     React is a library for building user interfaces. It is developed by Facebook and is known for its component-based approach and high performance.
 
